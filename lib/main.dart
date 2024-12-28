@@ -2,6 +2,7 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_project/pages/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,23 +30,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Muslim Hadits Quiz'),
-        ),
-        body: Container(
-          alignment: Alignment.center,
-          child: Column(
-            children: [
-              TextField(),
-              TextField(),
-              TextField(),
-              ElevatedButton(onPressed: () {}, child: Text("Button"))
-            ],
-          ),
-        ),
-      ),
+    return const MaterialApp(
+      // routes:
+      // {
+      //   '/': (context) => QuizScreen(),
+      // },
+      home: const HomeScreen(),
     );
   }
 }
