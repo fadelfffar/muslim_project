@@ -15,11 +15,11 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Container(
         padding: EdgeInsets.all(20),
         color: Colors.lightGreen.shade300,
-        child: const Column(
+        child: Column(
           children: [
-            SizedBox(height: 80),
+            const SizedBox(height: 80),
             // shows daily prayer time
-            Row(
+            const Row(
               //TODO: make each Column inside a Card or Container with a backgroundColor
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -55,10 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 40),
-            Text("List of Mosque in your area"),
-            SizedBox(height: 24,),
-            ListBody(
+            const SizedBox(height: 40),
+            const Text("List of Mosque in your area"),
+            const SizedBox(height: 24,),
+            const ListBody(
               children: [
                 Card(
                 child: Column(
@@ -84,17 +84,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Card(
                 child: Column(
-                  children: [
+                  children:
+                    [
                     Text("Shows Mosque Name"),
                     SizedBox(height: 40),
                     Text("Shows Mosque Image"),
                     SizedBox(height: 40),
                     Text("Shows Mosque Address"),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
               ],
             ),
+            const SizedBox(height: 50,),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text("Test"),
+              )
           ],
         ),
       ),
