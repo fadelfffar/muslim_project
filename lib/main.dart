@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(useMaterial3: true),
-      initialRoute: '/view',
+      initialRoute: '/home',
       routes:
       {
         '/home': (context) => HomeScreen(),
