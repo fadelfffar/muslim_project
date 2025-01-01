@@ -11,8 +11,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        // backgroundColor: Colors.black,
         toolbarHeight: 180,
         leading: Image.asset("assets/logo-lentera.png", width: 48, height: 48,),
         title: const Text(
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               // give padding inside the widget
               //// define second appbar height
-              height: 100,
+              // height: 100,
               width: 428,
               child: Stack(
                 children: [
