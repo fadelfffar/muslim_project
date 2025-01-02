@@ -11,10 +11,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        // backgroundColor: Colors.black,
-        toolbarHeight: 180,
+        appBar: AppBar(
+        elevation: 1,
+        backgroundColor: Colors.black,
+        toolbarHeight: 50,
         leading: Image.asset("assets/logo-lentera.png", width: 48, height: 48,),
         title: const Text(
           "Lentera Istiqomah",
@@ -23,27 +23,35 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(80),
-            child: Container(
-              // give padding inside the widget
-              //// define second appbar height
-              // height: 100,
-              width: 428,
-              child: Stack(
-                children: [
-                  Image.asset(
-                    "assets/header-masjid.png",
-                    scale: 1,
-                    fit: BoxFit.fill,
-                  ),
-                  // ClipRRect(
-                  //   child: BackdropFilter(
-                  //     filter: ImageFilter.blur(),
-                  //     child: Container(
-                  //       color: Colors.black38,
-                  //     ),),
-                  // ),
-                ],
+            preferredSize:  Size.fromHeight(80),
+            child: Opacity(
+              opacity: 0.3,
+              child: Container(
+                // ACTION: Remove container's widht and height
+                // foregroundDecoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(10),
+                //   // color: Colors.green,
+                //   image: DecorationImage(
+                //     image: AssetImage(
+                //       "assets/header-masjid.png",
+                //     )
+                //   )
+                // ),
+                // give padding inside the widget
+                //// define second appbar height
+                child: Stack(
+                  children: [
+                    Image.asset(
+                      "assets/header-masjid.png",
+                      fit: BoxFit.cover,
+                      // ACTION: add Image scale and multiply by 10
+                      scale: 0.1,
+                    ),
+                    ClipRRect(
+                      clipBehavior: Clip.antiAlias,
+                    ),
+                  ],
+                ),
               ),
             )
           ),
