@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
         elevation: 1,
         backgroundColor: Colors.black,
-        toolbarHeight: 50,
+        toolbarHeight: 12,
         leading: Image.asset("assets/logo-lentera.png", width: 48, height: 48,),
         title: const Text(
           "Lentera Istiqomah",
@@ -23,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         bottom: PreferredSize(
-            preferredSize:  Size.fromHeight(80),
+          // TODO: fix prefSize height from appBar
+            preferredSize:  Size.fromHeight(48),
             child: Opacity(
               opacity: 0.3,
               child: Container(
@@ -73,13 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
             const Text(
               "Media Dakwah Masjid Al Istiqomah Purbalingga\nPancarkan Cahaya Ilmu Tenangkan Jiwa",
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 36,
                 fontWeight: FontWeight.bold,
                 color: Colors.white
               ),
               textAlign: TextAlign.left,
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 40),
             // shows daily prayer time
             Row(
               //TODO: make each Column inside a Card or Container with a backgroundColor
@@ -149,52 +150,35 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            const SizedBox(height: 40),
-            const Text("List of Mosque in your area"),
-            const SizedBox(height: 80,),
-            const ListBody(
-              children: [
-                Card(
-                child: Column(
-                  children: [
-                    Text("Shows Mosque Name"),
-                    SizedBox(height: 40),
-                    Text("Shows Mosque Image"),
-                    SizedBox(height: 40),
-                    Text("Shows Mosque Address"),
-                  ],
-                ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    Text("Shows Mosque Name"),
-                    SizedBox(height: 40),
-                    Text("Shows Mosque Image"),
-                    SizedBox(height: 40),
-                    Text("Shows Mosque Address"),
-                  ],
-                ),
-              ),
-              // Card(
-              //   child: Column(
-              //     children:
-              //       [
-              //       Text("Shows Mosque Name"),
-              //       SizedBox(height: 40),
-              //       Text("Shows Mosque Image"),
-              //       SizedBox(height: 40),
-              //       Text("Shows Mosque Address"),
-              //       ],
-              //     ),
-              //   ),
-              ],
-            ),
             const SizedBox(height: 50,),
             ElevatedButton(
               onPressed: () {},
               child: const Text("Test"),
-              )
+          ),
+          const Text("Community & Partners", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),),
+          const Text("Berikut adalah komunitas dan kemitraan kami untuk senantiasa bersinergi dalam kebaikan",
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w400
+              ),
+            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/logo-bim.png", width: 96, height: 96,),
+              const SizedBox(width: 10,),
+              Image.asset("assets/logo-revation-foundation.jpg", width: 96, height: 96,),
+              const SizedBox(width: 10,),
+              Image.asset("assets/logo-lattov.png", width: 96, height: 96,),
+              const SizedBox(width: 10,),
+              Image.asset("assets/logo-undang-dang.png", width: 96, height: 96,),
+              const SizedBox(width: 10,),
+              Image.asset("assets/logo-yoga-ekatama.png", width: 96, height: 96,),
+              const SizedBox(width: 10,),
+              Image.asset("assets/logo-utsman-bin-affan.png", width: 96, height: 96,),
+              const SizedBox(width: 10,),
+              ],
+            ),
           ],
         ),
       ),
