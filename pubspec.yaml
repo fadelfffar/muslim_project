@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^1.2.2
   two_dimensional_scrollables: ^0.3.3
   widgetbook: ^3.10.1
 
