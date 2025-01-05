@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_project/networking/api_base_helper.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +9,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Future futurePrayer;
+  @override
+  void initState() {
+    super.initState();
+    futurePrayer = ApiBaseHelper();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,74 +77,89 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 40),
             // shows daily prayer time
-            Row(
-              //TODO: make each Column inside a Card or Container with a backgroundColor
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
-                    const Text("Imsak"),
-                    const Text("03:57"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/icon-subuh.png", width: 80, height: 80,),
-                    const Text("Subuh"),
-                    const Text("04:07"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/icon-syuruq.png", width: 80, height: 80,),
-                    const Text("Syuruq"),
-                    const Text("05:28"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/icon-dhuha.png", width: 80, height: 80,),
-                    const Text("Dhuha"),
-                    const Text("05:56"),
-                  ],
-                ),
-              ],
+            FutureBuilder(
+              future: futurePrayer,
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                // TODO: fix NoSuchMethodError: 'call
+                // Dynamic call of object has no instance method 'call'.
+                return Text(snapshot.data.ashar());
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+              }
             ),
-            const SizedBox(height: 40,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Image.asset("assets/icon-dzuhur.png", width: 80, height: 80,),
-                    const Text("Dhuhr"),
-                    const Text("12:44"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/icon-ashar.png", width: 80, height: 80,),
-                    const Text("Ashr"),
-                    const Text("15:03"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/icon-maghrib.png", width: 80, height: 80,),
-                    const Text("Maghrb"),
-                    const Text("17:47"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Image.asset("assets/icon-isya.png", width: 80, height: 80,),
-                    const Text("Isya"),
-                    const Text("19:19"),
-                  ],
-                ),
-              ],
-            ),
+            // Row(
+            //   //TODO: make each Column inside a Card or Container with a backgroundColor
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
+            //         const Text("Imsak"),
+            //         const Text("03:57"),
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-subuh.png", width: 80, height: 80,),
+            //         const Text("Subuh"),
+            //         const Text("04:07"),
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-syuruq.png", width: 80, height: 80,),
+            //         const Text("Syuruq"),
+            //         const Text("05:28"),
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-dhuha.png", width: 80, height: 80,),
+            //         const Text("Dhuha"),
+            //         const Text("05:56"),
+            //       ],
+            //     ),
+            //   ],
+            // ),
+            // const SizedBox(height: 40,),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.center,
+            //   children: [
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-dzuhur.png", width: 80, height: 80,),
+            //         const Text("Dhuhr"),
+            //         const Text("12:44"),
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-ashar.png", width: 80, height: 80,),
+            //         const Text("Ashr"),
+            //         const Text("15:03"),
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-maghrib.png", width: 80, height: 80,),
+            //         const Text("Maghrb"),
+            //         const Text("17:47"),
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         Image.asset("assets/icon-isya.png", width: 80, height: 80,),
+            //         const Text("Isya"),
+            //         const Text("19:19"),
+            //       ],
+            //     ),
+            //   ],
+            // ),
             const SizedBox(height: 50,),
           const Text("Community & Partners",
             style: TextStyle(
