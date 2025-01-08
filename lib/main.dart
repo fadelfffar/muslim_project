@@ -33,7 +33,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true),
+      theme: ThemeData(
+        useMaterial3: true
+        // colorScheme: ColorScheme(
+        //   brightness: Brightness.light,
+        //   primary: const Color(0xff359D59),
+        //   onPrimary: const Color(0xff1A7149),
+        //   secondary: const Color(0xffB7E369),
+        //   onSecondary: const Color(0xff8FC332),
+        //   error: const Color.fromARGB(0, 50, 110, 195), onError: const Color.fromARGB(0, 55, 85, 2), surface: const Color.fromARGB(0, 158, 158, 158), onSurface: const Color.fromARGB(0, 156, 156, 156))
+      ),
       initialRoute: '/home',
       routes:
       {

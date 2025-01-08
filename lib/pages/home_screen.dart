@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_project/networking/api_base_helper.dart';
+import 'package:muslim_project/networking/prayer_response.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -9,7 +10,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late Future futurePrayer;
+  late Future<Prayer> futurePrayer;
   @override
   void initState() {
     super.initState();
@@ -57,19 +58,19 @@ class _HomeScreenState extends State<HomeScreen> {
         color: Colors.lightGreen.shade300,
         child: Column(
           children: [
-            const Text(
+            Text(
               "Selamat Datang di Website Lentera Istiqomah",
               style: TextStyle(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
-                color: Colors.lightGreenAccent,
+                color: Theme.of(context).colorScheme.secondary
               ),
               textAlign: TextAlign.left,
             ),
             const Text(
               "Media Dakwah Masjid Al Istiqomah Purbalingga\nPancarkan Cahaya Ilmu Tenangkan Jiwa",
               style: TextStyle(
-                fontSize: 36,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: Colors.white
               ),
@@ -80,16 +81,29 @@ class _HomeScreenState extends State<HomeScreen> {
             FutureBuilder(
               future: futurePrayer,
               builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                // TODO: fix NoSuchMethodError: 'call
-                // Dynamic call of object has no instance method 'call'.
-                return Text(snapshot.data.ashar());
-              } else if (snapshot.hasError) {
-                return Text('${snapshot.error}');
-              }
-
-              // By default, show a loading spinner.
-              return const CircularProgressIndicator();
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  // By default, show a loading spinner.
+                  return const CircularProgressIndicator();
+                } else if(snapshot.hasError) {
+                  return Text('${snapshot.error}');
+                } else if (snapshot.hasData) {
+                  // TODO: fix how to show data
+                  return ListBody(
+                    mainAxis: Axis.vertical,
+                    children: [
+                      Text(snapshot.data!.tanggal),
+                      Text(snapshot.data!.imsak),
+                      Text(snapshot.data!.subuh),
+                      Text(snapshot.data!.terbit),
+                      Text(snapshot.data!.dzuhur),
+                      Text(snapshot.data!.ashar),
+                      Text(snapshot.data!.maghrib),
+                      Text(snapshot.data!.isya),
+                    ],
+                  );
+                } else {
+                  return const Text("No data available");
+                }
               }
             ),
             // Row(
@@ -161,11 +175,11 @@ class _HomeScreenState extends State<HomeScreen> {
             //   ],
             // ),
             const SizedBox(height: 50,),
-          const Text("Community & Partners",
+            Text("Community & Partners",
             style: TextStyle(
               fontSize: 36,
               fontWeight: FontWeight.bold,
-              color: Colors.green
+              color: Theme.of(context).colorScheme.onPrimary
             ),
           ),
           const Text("Berikut adalah komunitas dan kemitraan kami untuk senantiasa bersinergi dalam kebaikan",
