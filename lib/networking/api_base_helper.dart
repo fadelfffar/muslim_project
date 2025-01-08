@@ -7,7 +7,7 @@ import 'package:muslim_project/networking/prayer_response.dart';
 Future<Prayer> ApiBaseHelper() async {
   try {
     final response = await http
-      .get(Uri.parse('https://api.myquran.com/v2/sholat/jadwal/1420/2025-01-05'));
+      .get(Uri.parse('https://api.myquran.com/v2/sholat/jadwal/1420/2025-01-08'));
       if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.

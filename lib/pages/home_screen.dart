@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         padding: const EdgeInsets.all(20),
         color: Colors.lightGreen.shade300,
+        constraints: BoxConstraints.expand(width: 2400, height: 1200),
         child: Column(
           children: [
             Text(
@@ -88,17 +89,201 @@ class _HomeScreenState extends State<HomeScreen> {
                   return Text('${snapshot.error}');
                 } else if (snapshot.hasData) {
                   // TODO: fix how to show data
-                  return ListBody(
-                    mainAxis: Axis.vertical,
+                  // TODO: change to use ListView -> ListTile -> leading and title
+                  return Row(
+                    // Problem: if axis is horizontal, the data is not showing not because same colors issue, but unknown problem, should I just use it vertically instead???
+                    // Card(
+                    //     child: ListTile(
+                    //       leading: Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
+                    //       title: Text(snapshot.data!.imsak)
+                    //     ),
+                    //   )
                     children: [
-                      Text(snapshot.data!.tanggal),
-                      Text(snapshot.data!.imsak),
-                      Text(snapshot.data!.subuh),
-                      Text(snapshot.data!.terbit),
-                      Text(snapshot.data!.dzuhur),
-                      Text(snapshot.data!.ashar),
-                      Text(snapshot.data!.maghrib),
-                      Text(snapshot.data!.isya),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
+                            title: Text(
+                              "Imsak",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.imsak,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-subuh.png", width: 80, height: 80,),
+                            title: Text(
+                              "Subuh",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.imsak,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-syuruq.png", width: 80, height: 80,),
+                            title: Text(
+                              "Syuruq",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.imsak,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-dzuhur.png", width: 80, height: 80,),
+                            title: Text(
+                              "Dzuhur",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.dzuhur,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-ashar.png", width: 80, height: 80,),
+                            title: Text(
+                              "Ashar",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.ashar,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-maghrib.png", width: 80, height: 80,),
+                            title: Text(
+                              "Maghrib",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.maghrib,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Card(
+                          color: Color(0xffF9FCF2),
+                          child:
+                          ListTile(
+                            leading: Image.asset("assets/icon-isya.png", width: 80, height: 80,),
+                            title: Text(
+                              "Isya",
+                              style: TextStyle(
+                                color: Color(0xff778288),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w400
+                              ),),
+                            trailing: Text(
+                              snapshot.data!.isya,
+                              style: TextStyle(
+                                color: Color(
+                                  0xff474E52,),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 28),),
+                          ),
+                        ),
+                      ),
+                      // TODO: turn this into a card
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.tanggal)),
+                      // Card(
+                      //   child: Text(snapshot.data!.imsak)),
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.subuh)),
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.terbit)),
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.dzuhur)),
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.ashar)),
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.maghrib)),
+                      // Card(
+                      //   color: Colors.blue,
+                      //   child: Text(snapshot.data!.isya)),
                     ],
                   );
                 } else {
@@ -106,74 +291,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               }
             ),
-            // Row(
-            //   //TODO: make each Column inside a Card or Container with a backgroundColor
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
-            //         const Text("Imsak"),
-            //         const Text("03:57"),
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-subuh.png", width: 80, height: 80,),
-            //         const Text("Subuh"),
-            //         const Text("04:07"),
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-syuruq.png", width: 80, height: 80,),
-            //         const Text("Syuruq"),
-            //         const Text("05:28"),
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-dhuha.png", width: 80, height: 80,),
-            //         const Text("Dhuha"),
-            //         const Text("05:56"),
-            //       ],
-            //     ),
-            //   ],
-            // ),
-            // const SizedBox(height: 40,),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-dzuhur.png", width: 80, height: 80,),
-            //         const Text("Dhuhr"),
-            //         const Text("12:44"),
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-ashar.png", width: 80, height: 80,),
-            //         const Text("Ashr"),
-            //         const Text("15:03"),
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-maghrib.png", width: 80, height: 80,),
-            //         const Text("Maghrb"),
-            //         const Text("17:47"),
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         Image.asset("assets/icon-isya.png", width: 80, height: 80,),
-            //         const Text("Isya"),
-            //         const Text("19:19"),
-            //       ],
-            //     ),
-            //   ],
-            // ),
             const SizedBox(height: 50,),
             Text("Community & Partners",
             style: TextStyle(
