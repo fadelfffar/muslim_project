@@ -92,12 +92,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   // TODO: change to use ListView -> ListTile -> leading and title
                   return Row(
                     // Problem: if axis is horizontal, the data is not showing not because same colors issue, but unknown problem, should I just use it vertically instead???
-                    // Card(
-                    //     child: ListTile(
-                    //       leading: Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
-                    //       title: Text(snapshot.data!.imsak)
-                    //     ),
-                    //   )
                     children: [
                       Flexible(
                         child: Card(
@@ -107,20 +101,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             leading: Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
                             title: Text(
                               "Imsak",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                            ),
                             subtitle: Text(
                               snapshot.data!.imsak,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28
-                                  )
-                                  ,),
+                            ),
                           ),
                         ),
                       ),
@@ -132,18 +116,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             leading: Image.asset("assets/icon-subuh.png", width: 80, height: 80,),
                             title: Text(
                               "Subuh",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                            ),
                             subtitle: Text(
                               snapshot.data!.imsak,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                            ),
                           ),
                         ),
                       ),
@@ -155,18 +131,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             leading: Image.asset("assets/icon-syuruq.png", width: 80, height: 80,),
                             title: Text(
                               "Syuruq",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                            ),
                             subtitle: Text(
                               snapshot.data!.imsak,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                            ),
                           ),
                         ),
                       ),
@@ -178,18 +146,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             leading: Image.asset("assets/icon-dzuhur.png", width: 80, height: 80,),
                             title: Text(
                               "Dzuhur",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                            ),
                             subtitle: Text(
                               snapshot.data!.dzuhur,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                            ),
                           ),
                         ),
                       ),
@@ -200,19 +160,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ListTile(
                             leading: Image.asset("assets/icon-ashar.png", width: 80, height: 80,),
                             title: Text(
-                              "Ashar",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                              "Ashar",),
                             subtitle: Text(
                               snapshot.data!.ashar,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                            ),
                           ),
                         ),
                       ),
@@ -224,18 +175,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             leading: Image.asset("assets/icon-maghrib.png", width: 80, height: 80,),
                             title: Text(
                               "Maghrib",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                            ),
                             subtitle: Text(
                               snapshot.data!.maghrib,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                            ),
                           ),
                         ),
                       ),
@@ -247,18 +190,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             leading: Image.asset("assets/icon-isya.png", width: 80, height: 80,),
                             title: Text(
                               "Isya",
-                              style: TextStyle(
-                                color: Color(0xff778288),
-                                fontSize: 24,
-                                fontWeight: FontWeight.w400
-                              ),),
+                            ),
                             subtitle: Text(
                               snapshot.data!.isya,
-                              style: TextStyle(
-                                color: Color(
-                                  0xff474E52,),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                            ),
                           ),
                         ),
                       ),
