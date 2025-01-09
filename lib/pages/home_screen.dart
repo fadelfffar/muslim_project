@@ -262,30 +262,6 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      // TODO: turn this into a card
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.tanggal)),
-                      // Card(
-                      //   child: Text(snapshot.data!.imsak)),
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.subuh)),
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.terbit)),
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.dzuhur)),
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.ashar)),
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.maghrib)),
-                      // Card(
-                      //   color: Colors.blue,
-                      //   child: Text(snapshot.data!.isya)),
                     ],
                   );
                 } else {
