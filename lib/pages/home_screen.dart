@@ -112,13 +112,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.imsak,
                               style: TextStyle(
                                 color: Color(
                                   0xff474E52,),
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 28),),
+                                  fontSize: 28
+                                  )
+                                  ,),
                           ),
                         ),
                       ),
@@ -135,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.imsak,
                               style: TextStyle(
                                 color: Color(
@@ -158,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.imsak,
                               style: TextStyle(
                                 color: Color(
@@ -181,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.dzuhur,
                               style: TextStyle(
                                 color: Color(
@@ -204,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.ashar,
                               style: TextStyle(
                                 color: Color(
@@ -227,7 +229,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.maghrib,
                               style: TextStyle(
                                 color: Color(
@@ -250,7 +252,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400
                               ),),
-                            trailing: Text(
+                            subtitle: Text(
                               snapshot.data!.isya,
                               style: TextStyle(
                                 color: Color(

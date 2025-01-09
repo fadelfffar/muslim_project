@@ -34,7 +34,29 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        useMaterial3: true
+        useMaterial3: true,
+        // Project wide Card themes, change this to change all card styles
+        cardTheme: CardTheme(
+          color: Color(0xffF9FCF2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+        ),
+        listTileTheme: ListTileThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          titleTextStyle: TextStyle(
+            color: Color(0xff778288),
+            fontSize: 24,
+            fontWeight: FontWeight.w400
+          ),
+          subtitleTextStyle: TextStyle(
+            color: Color(0xff474E52,),
+            fontWeight: FontWeight.bold,
+            fontSize: 28
+          ),
+        )
         // colorScheme: ColorScheme(
         //   brightness: Brightness.light,
         //   primary: const Color(0xff359D59),
