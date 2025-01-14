@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:muslim_project/pages/quiz_screen.dart';
-import 'package:muslim_project/pages/ustadz_schedule_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,18 +42,19 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         listTileTheme: ListTileThemeData(
+          minTileHeight: 20,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
           titleTextStyle: TextStyle(
             color: Color(0xff778288),
-            fontSize: 24,
+            fontSize: 14,
             fontWeight: FontWeight.w400
           ),
           subtitleTextStyle: TextStyle(
             color: Color(0xff474E52,),
             fontWeight: FontWeight.bold,
-            fontSize: 28
+            fontSize: 18
           ),
         )
         // colorScheme: ColorScheme(
@@ -70,7 +70,7 @@ class _MyAppState extends State<MyApp> {
       {
         '/home': (context) => HomeScreen(),
         '/': (context) => QuizScreen(),
-        '/view': (context) => ExampleApp(),
+        // '/view': (context) => ExampleApp(),
       },
     );
   }

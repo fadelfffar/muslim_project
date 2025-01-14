@@ -6,16 +6,19 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState(); 
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int currentPageIndex = 0;
   late Future<Prayer> futurePrayer;
+  
   @override
   void initState() {
     super.initState();
     futurePrayer = ApiBaseHelper();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //     Image.asset(
               //       "assets/header-masjid.png",
               //       fit: BoxFit.cover,
-              //       // ACTION: add Image scale and multiply by 10
+              //       // ACTION: add Image scale and multiply by 24
               //       scale: 0.1,
               //     ),
               //     ClipRRect(
@@ -53,16 +56,38 @@ class _HomeScreenState extends State<HomeScreen> {
             // ),
           // ),
       ),
-      body: Container(
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        indicatorColor: Colors.amber,
+        selectedIndex: currentPageIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+            selectedIcon: Icon(Icons.home, color: Color(0xffF9FCF2),),
+            icon: Icon(Icons.home_outlined),
+            label: 'Beranda',
+          ),
+          NavigationDestination(
+            icon: Badge(child: Icon(Icons.info_outline_rounded, color: Color(0xffF9FCF2),)),
+            label: 'Tentang',
+          ),
+        ],
+      ),
+      body: <Widget>[
+        /// Home page
+        Container(
         padding: const EdgeInsets.all(20),
         color: Colors.lightGreen.shade300,
-        constraints: BoxConstraints.expand(width: 2400, height: 1200),
-        child: Column(
+        constraints: BoxConstraints.expand(width: 2400, height: 800),
+        child: ListView(
           children: [
             Text(
               "Selamat Datang di Website Lentera Istiqomah",
               style: TextStyle(
-                fontSize: 48,
+                fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Theme.of(context).colorScheme.secondary
               ),
@@ -71,13 +96,13 @@ class _HomeScreenState extends State<HomeScreen> {
             const Text(
               "Media Dakwah Masjid Al Istiqomah Purbalingga\nPancarkan Cahaya Ilmu Tenangkan Jiwa",
               style: TextStyle(
-                fontSize: 28,
+                fontSize: 14,
                 fontWeight: FontWeight.bold,
                 color: Colors.white
               ),
               textAlign: TextAlign.left,
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 12),
             // shows daily prayer time
             FutureBuilder(
               future: futurePrayer,
@@ -90,7 +115,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 } else if (snapshot.hasData) {
                   // TODO: fix how to show data
                   // TODO: change to use ListView -> ListTile -> leading and title
-                  return Row(
+                  return Column(
+                    mainAxisSize: MainAxisSize.values[0],
                     // Problem: if axis is horizontal, the data is not showing not because same colors issue, but unknown problem, should I just use it vertically instead???
                     children: [
                       Flexible(
@@ -98,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-imsyak.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-imsyak.png", width: 24, height: 24,),
                             title: Text(
                               "Imsak",
                             ),
@@ -113,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-subuh.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
                             title: Text(
                               "Subuh",
                             ),
@@ -128,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-syuruq.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-syuruq.png", width: 24, height: 24,),
                             title: Text(
                               "Syuruq",
                             ),
@@ -143,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-dzuhur.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-dzuhur.png", width: 24, height: 24,),
                             title: Text(
                               "Dzuhur",
                             ),
@@ -158,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-ashar.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-ashar.png", width: 24, height: 24,),
                             title: Text(
                               "Ashar",),
                             subtitle: Text(
@@ -172,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-maghrib.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
                             title: Text(
                               "Maghrib",
                             ),
@@ -187,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Color(0xffF9FCF2),
                           child:
                           ListTile(
-                            leading: Image.asset("assets/icon-isya.png", width: 80, height: 80,),
+                            leading: Image.asset("assets/icon-isya.png", width: 24, height: 24,),
                             title: Text(
                               "Isya",
                             ),
@@ -204,41 +230,129 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               }
             ),
-            const SizedBox(height: 50,),
+            const SizedBox(height: 12,),
             Text("Community & Partners",
             style: TextStyle(
-              fontSize: 36,
+              fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Theme.of(context).colorScheme.onPrimary
             ),
           ),
           const Text("Berikut adalah komunitas dan kemitraan kami untuk senantiasa bersinergi dalam kebaikan",
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 16,
               fontWeight: FontWeight.w400
             ),
           ),
           const SizedBox(height: 20,),
-          Row(
+          // TODO: change this into ListView
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/logo-bim.png", width: 120, height: 120,),
+              Image.asset("assets/logo-bim.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
-              Image.asset("assets/logo-revation-foundation.jpg", width: 120, height: 120,),
+              Image.asset("assets/logo-revation-foundation.jpg", width: 80, height: 80,),
               const SizedBox(width: 40,),
-              Image.asset("assets/logo-lattov.png", width: 120, height: 120,),
+              Image.asset("assets/logo-lattov.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
-              Image.asset("assets/logo-undang-dang.png", width: 120, height: 120,),
+              Image.asset("assets/logo-undang-dang.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
-              Image.asset("assets/logo-yoga-ekatama.png", width: 120, height: 120,),
+              Image.asset("assets/logo-yoga-ekatama.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
-              Image.asset("assets/logo-utsman-bin-affan.png", width: 120, height: 120,),
+              Image.asset("assets/logo-utsman-bin-affan.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
               ],
             ),
           ],
         ),
       ),
+
+      /// Info page
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Column(
+            children: <Widget>[
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text('Masjid bukan sekedar Rumah Allah, melainkan juga Solusi Ummat'),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text('Masjid juga menjadi tempat untuk belajar nilai-nilai etika, kesalehan, dan kemurahan hati kepada masyarakat, sehingga masing-masing kita dapat tumbuh menjadi individu yang bertanggung jawab dan berkontribusi positif dalam masyarakat.'),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Sambutan Ketua Takmir Masjid Al Istiqomah"),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Assalamualaikum warahmatullahi wabarakatuh, Puji syukur kami panjatkan ke hadirat Allah SWT, atas segala limpahan rahmat dan hidayah-Nya, yang telah mengantarkan kita semua dalam keadaan sehat dan dalam keadaan yang penuh berkah. Saya, sebagai Ketua Takmir Masjid Al Istiqomah, dengan rendah hati mengucapkan selamat datang kepada seluruh jamaah dan para tamu yang hadir di Masjid Al Istiqomah. Sebagai takmir, tugas kami adalah untuk menjaga dan memelihara kebersihan serta kesakralan Masjid Al Istiqomah. Kami berkomitmen untuk menyediakan fasilitas dan program yang mengakomodasi kebutuhan spiritual dan keagamaan jamaah. Bersama-sama, mari kita jaga dan tingkatkan kebersamaan, solidaritas, dan silaturahmi di antara kita sebagai umat Muslim. Saya berharap semoga Masjid Al Istiqomah menjadi tempat yang tidak hanya menjadi pusat ibadah, tetapi juga menjadi pusat pendidikan, kegiatan sosial, dan kegiatan keagamaan yang bermanfaat bagi seluruh umat. Bersama-sama, mari kita wujudkan visi dan misi kita untuk meningkatkan pendalaman iman dan ketaqwaan kepada Allah SWT. Wassalamu'alaikum warahmatullahi wabarakatuh."),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Visi Misi"),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Masjid adalah tempat ibadah bagi umat Muslim. Kata masjid berasal dari bahasa Arab yang berarti tempat sujud. Masjid digunakan sebagai tempat untuk shalat, menghadiri kegiatan keagamaan, dan menjalin hubungan dengan komunitas Muslim lainnya.h"),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Misi Kami"),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Membangun umat yang kuat: Masjid dapat menjadi pusat pembinaan umat yang kuat, yang dilandasi oleh keimanan dan ketaqwaan kepada Allah swt."),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Menjadi pusat informasi: Masjid dapat memainkan peran yang penting dalam menyebarkan informasi tentang kegiatan-kegiatan keagamaan dan sosial di lingkungan sekitarnya.    "),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Menyediakan fasilitas pendidikan: Masjid bisa memfasilitasi program-program pendidikan bagi anak-anak, remaja, dan orang dewasa dalam mengembangkan pengetahuan keagamaan serta ketrampilan kehidupan sehari-hari."),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: Card(
+                  child: ListTile(
+                    title: Text("Meningkatkan silaturahim: Masjid dapat menjadi tempat yang mempererat hubungan sosial antara jemaahnya, serta juga antara masjid dan masyarakat sekitarnya."),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ][currentPageIndex],
     );
   }
 }

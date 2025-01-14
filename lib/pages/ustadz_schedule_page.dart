@@ -1,61 +1,61 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+// // Copyright 2013 The Flutter Authors. All rights reserved.
+// // Use of this source code is governed by a BSD-style license that can be
+// // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
-import 'package:muslim_project/widgets/table_explorer.dart';
+// import 'package:flutter/material.dart';
+// import 'package:muslim_project/widgets/table_explorer.dart';
 
 
-void main() {
-  runApp(const ExampleApp());
-}
+// void main() {
+//   runApp(const ExampleApp());
+// }
 
-/// A sample application that utilizes the TableView and TreeView APIs.
-class ExampleApp extends StatelessWidget {
-  /// Creates an instance of the example app.
-  const ExampleApp({super.key});
+// /// A sample application that utilizes the TableView and TreeView APIs.
+// class ExampleApp extends StatelessWidget {
+//   /// Creates an instance of the example app.
+//   const ExampleApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: '2D Scrolling Examples',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
-        appBarTheme: AppBarTheme(backgroundColor: Colors.purple[50]),
-      ),
-      home: const ExampleHome(),
-      routes: <String, WidgetBuilder>{
-        '/table': (BuildContext context) => const TableExplorer(),
-      },
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       title: '2D Scrolling Examples',
+//       theme: ThemeData(
+//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+//         appBarTheme: AppBarTheme(backgroundColor: Colors.purple[50]),
+//       ),
+//       home: const ExampleHome(),
+//       routes: <String, WidgetBuilder>{
+//         '/table': (BuildContext context) => const TableExplorer(),
+//       },
+//     );
+//   }
+// }
 
-/// The home page of the application, which directs to the tree or table
-/// explorer.
-class ExampleHome extends StatelessWidget {
-  /// Creates a screen that demonstrates the TableView widget.
-  const ExampleHome({super.key});
+// /// The home page of the application, which directs to the tree or table
+// /// explorer.
+// class ExampleHome extends StatelessWidget {
+//   /// Creates a screen that demonstrates the TableView widget.
+//   const ExampleHome({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Tables & Trees'),
-      ),
-      body: Center(
-        child: Column(children: <Widget>[
-          const Spacer(flex: 3),
-          FilledButton(
-            onPressed: () {
-              // Go to table explorer
-              Navigator.of(context).pushNamed('/table');
-            },
-            child: const Text('TableView Explorer'),
-          ),
-          const Spacer(),
-        ]),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Tables & Trees'),
+//       ),
+//       body: Center(
+//         child: Column(children: <Widget>[
+//           const Spacer(flex: 3),
+//           FilledButton(
+//             onPressed: () {
+//               // Go to table explorer
+//               Navigator.of(context).pushNamed('/table');
+//             },
+//             child: const Text('TableView Explorer'),
+//           ),
+//           const Spacer(),
+//         ]),
+//       ),
+//     );
+//   }
+// }
