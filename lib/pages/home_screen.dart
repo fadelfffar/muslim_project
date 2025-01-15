@@ -62,16 +62,17 @@ class _HomeScreenState extends State<HomeScreen> {
             currentPageIndex = index;
           });
         },
-        indicatorColor: Colors.amber,
+        backgroundColor: const Color(0xff8FC332),
+        indicatorColor: const Color(0xffF9FCF2),
         selectedIndex: currentPageIndex,
         destinations: const <Widget>[
           NavigationDestination(
-            selectedIcon: Icon(Icons.home, color: Color(0xffF9FCF2),),
+            selectedIcon: Icon(Icons.home, color: Colors.black,),
             icon: Icon(Icons.home_outlined),
             label: 'Beranda',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.info_outline_rounded, color: Color(0xffF9FCF2),)),
+            icon: Badge(child: Icon(Icons.info_outline_rounded, color: Colors.black,)),
             label: 'Tentang',
           ),
         ],
@@ -80,8 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
         /// Home page
         Container(
         padding: const EdgeInsets.all(20),
-        color: Colors.lightGreen.shade300,
-        constraints: BoxConstraints.expand(width: 2400, height: 800),
+        color: const Color(0xffB7E369),
+        constraints: const BoxConstraints.expand(width: 2400, height: 800),
         child: ListView(
           children: [
             Text(
@@ -121,11 +122,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-imsyak.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Imsak",
                             ),
                             subtitle: Text(
@@ -136,11 +137,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Subuh",
                             ),
                             subtitle: Text(
@@ -151,11 +152,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-syuruq.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Syuruq",
                             ),
                             subtitle: Text(
@@ -166,11 +167,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-dzuhur.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Dzuhur",
                             ),
                             subtitle: Text(
@@ -181,11 +182,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-ashar.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Ashar",),
                             subtitle: Text(
                               snapshot.data!.ashar,
@@ -195,11 +196,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Maghrib",
                             ),
                             subtitle: Text(
@@ -210,11 +211,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Flexible(
                         child: Card(
-                          color: Color(0xffF9FCF2),
+                          color: const Color(0xffF9FCF2),
                           child:
                           ListTile(
                             leading: Image.asset("assets/icon-isya.png", width: 24, height: 24,),
-                            title: Text(
+                            title: const Text(
                               "Isya",
                             ),
                             subtitle: Text(
@@ -268,9 +269,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       /// Info page
-        const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Column(
+        Container(
+          color: const Color(0xffB7E369),
+          child: const Column(
             children: <Widget>[
               Flexible(
                 child: Card(
