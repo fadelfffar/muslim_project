@@ -289,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: Card(
                   child: ListTile(
-                    title: Text("Sambutan Ketua Takmir Masjid Al Istiqomah"),
+                    title: Text("Sambutan Ketua Takmir Masjid Al Istiqomah, Hartawan Bayu Prasetyo"),
                   ),
                 ),
               ),
