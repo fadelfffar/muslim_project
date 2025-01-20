@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:muslim_project/networking/api_base_helper.dart';
 import 'package:muslim_project/networking/prayer_response.dart';
 
+
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -280,6 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
+              // TODO: fix card sizing to fit all text
               Flexible(
                 child: Card(
                   child: ListTile(
