@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_project/networking/api_base_helper.dart';
 import 'package:muslim_project/networking/prayer_response.dart';
-
-
+import 'package:muslim_project/notification/notification_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState(); 
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
@@ -147,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               "Subuh",
                             ),
                             subtitle: Text(
-                              snapshot.data!.imsak,
+                              snapshot.data!.subuh,
                             ),
                           ),
                         ),
@@ -162,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               "Syuruq",
                             ),
                             subtitle: Text(
-                              snapshot.data!.imsak,
+                              snapshot.data!.terbit,
                             ),
                           ),
                         ),
@@ -264,12 +263,31 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(width: 40,),
               Image.asset("assets/logo-utsman-bin-affan.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
+              FutureBuilder(
+                future: futurePrayer,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return ElevatedButton(
+                      onPressed: () {
+                        NotificationService().showNotification(
+                        title: "Ashar Prayer Time has come",
+                        body: snapshot.data!.ashar
+                      );
+                      },
+                      child: Text("Show Notifications")
+                      );
+                  } else if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  } else {
+                    return const Text("No data available");
+                  }
+                },
+              )
               ],
             ),
           ],
         ),
       ),
-
       /// Info page
         Container(
           color: const Color(0xffB7E369),
@@ -282,7 +300,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              // TODO: fix card sizing to fit all text
               Flexible(
                 child: Card(
                   child: ListTile(

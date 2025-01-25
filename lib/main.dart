@@ -2,10 +2,16 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:muslim_project/notification/notification_service.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:muslim_project/pages/quiz_screen.dart';
 
+
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // init notification
+  NotificationService().initNotification();
   runApp(const MyApp());
 }
 
