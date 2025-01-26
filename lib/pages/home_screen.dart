@@ -266,12 +266,18 @@ class _HomeScreenState extends State<HomeScreen> {
               FutureBuilder(
                 future: futurePrayer,
                 builder: (context, snapshot) {
+                  // Get the current date using DateTime.now(), example output "2025-01-09 22:59:24.702"
+                  final datenow = DateTime.now();
+                  // split datenow into two independent index
+                  final currentdate = "$datenow".split(" ");
+                  // get the first index of the current date
+                  final justdate = currentdate[0];
                   if (snapshot.hasData) {
                     return ElevatedButton(
                       onPressed: () {
-                        NotificationService().showNotification(
+                        NotificationService().showScheduledNotification(
                         title: "Ashar Prayer Time has come",
-                        body: snapshot.data!.ashar
+                        body: snapshot.data!.dzuhur, scheduledTime: DateTime.parse("${justdate} ${snapshot.data!.dzuhur}")
                       );
                       },
                       child: Text("Show Notifications")

@@ -1,7 +1,7 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-// import 'package:timezone/data/latest_all.dart' as tz;
-// import 'package:timezone/timezone.dart' as tz;
-
+import 'package:flutter_timezone/flutter_timezone.dart';
+import 'package:timezone/data/latest_all.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
 
 class NotificationService {
   final notificationPlugin = FlutterLocalNotificationsPlugin();
@@ -22,10 +22,10 @@ class NotificationService {
         AndroidInitializationSettings('@mipmap/ic_launcher');
   
   // time zone initialization
-  // final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-  // tz.initializeTimeZones();
-    // optional: set local time zone, use with flutter_timezone
-    // tz.setLocalLocation(tz.getLocation("Asia/Jakarta"));
+  final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
+  tz.initializeTimeZones();
+  // optional: set local time zone, use with flutter_timezone
+  tz.setLocalLocation(tz.getLocation('America/Detroit'));
 
   // prepare iOS initialization
   const initSettingsIOs = DarwinInitializationSettings(
@@ -61,24 +61,44 @@ class NotificationService {
     );
   }
 
-
   // Show Notification
   Future<void> showNotification({
     int id = 0,
     String? title,
     String? body
   }) async {
-    await notificationPlugin.show(
+    notificationPlugin.show(
       id,
       title,
       body,
-      // tz.TZDateTime.now(tz.local).add(const Duration(seconds: 15)),
       const NotificationDetails(
         android: AndroidNotificationDetails(
           'your channel id', 'your channel name',
           channelDescription: 'your channel description'),
       ),
-      // androidScheduleMode: AndroidScheduleMode.exact,
+    );
+  }
+
+  // Show Scheduled Notification
+  void showScheduledNotification({
+    int id = 0,
+    String? title,
+    String? body,
+    required DateTime scheduledTime,
+    String? payload,
+  }) async {
+    notificationPlugin.zonedSchedule(
+      id,
+      title,
+      body,
+      tz.TZDateTime.from(scheduledTime, tz.local),
+      await NotificationDetails(
+        android: AndroidNotificationDetails(
+          'your channel id', 'your channel name',
+          channelDescription: 'your channel description'),
+      ),
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      payload: payload,
     );
   }
 }
