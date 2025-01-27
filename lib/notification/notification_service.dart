@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
@@ -8,6 +10,7 @@ class NotificationService {
 
   bool _isInitialized = false;
   bool get isInitialized => _isInitialized;
+  int randomId = Random().nextInt(1000);
 
   // Initialization
   Future<void> initNotification() async {
@@ -25,7 +28,7 @@ class NotificationService {
   final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
   tz.initializeTimeZones();
   // optional: set local time zone, use with flutter_timezone
-  tz.setLocalLocation(tz.getLocation('America/Detroit'));
+  tz.setLocalLocation(tz.getLocation('Asia/Jakarta'));
 
   // prepare iOS initialization
   const initSettingsIOs = DarwinInitializationSettings(
@@ -85,7 +88,6 @@ class NotificationService {
     String? title,
     String? body,
     required DateTime scheduledTime,
-    String? payload,
   }) async {
     notificationPlugin.zonedSchedule(
       id,
@@ -94,11 +96,10 @@ class NotificationService {
       tz.TZDateTime.from(scheduledTime, tz.local),
       await NotificationDetails(
         android: AndroidNotificationDetails(
-          'your channel id', 'your channel name',
+          'your channel id $randomId', 'your channel name',
           channelDescription: 'your channel description'),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-      payload: payload,
     );
   }
 }

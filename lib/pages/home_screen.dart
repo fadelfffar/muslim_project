@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:muslim_project/networking/api_base_helper.dart';
 import 'package:muslim_project/networking/prayer_response.dart';
@@ -11,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int randomId = Random().nextInt(1000);
   int currentPageIndex = 0;
   late Future<Prayer> futurePrayer;
   
@@ -276,8 +279,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     return ElevatedButton(
                       onPressed: () {
                         NotificationService().showScheduledNotification(
-                        title: "Ashar Prayer Time has come",
-                        body: snapshot.data!.dzuhur, scheduledTime: DateTime.parse("${justdate} ${snapshot.data!.dzuhur}")
+                          id: Random().nextInt(1000),
+                          title: "Ashar Prayer Time has come",
+                          body: snapshot.data!.dzuhur,
+                          scheduledTime: DateTime.now().add(const Duration(seconds: 10))
+                          // DateTime.parse("${justdate} ${snapshot.data!.dzuhur}"),
                       );
                       },
                       child: Text("Show Notifications")

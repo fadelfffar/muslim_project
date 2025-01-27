@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:muslim_project/notification/notification_service.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:muslim_project/pages/quiz_screen.dart';
+import 'package:timezone/data/latest_all.dart' as tz;
 
 
 void main() {
@@ -12,6 +13,8 @@ void main() {
 
   // init notification
   NotificationService().initNotification();
+  // Don’t forget to call tz.initializeTimeZones() in your main() function. Missing this can lead to scheduling issues.
+  tz.initializeTimeZones();
   runApp(const MyApp());
 }
 
