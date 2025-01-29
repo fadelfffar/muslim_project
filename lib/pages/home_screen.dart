@@ -436,6 +436,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                           child: Text("Make an Reminder 10 Minutes before Isya time")
                         ),
+                        ElevatedButton(
+                          onPressed: () {
+                            NotificationService().cancelAllNotifications();
+                          }, child: Text("cancel all notifications"))
                       ],
                     );
                   } else if (snapshot.hasError) {

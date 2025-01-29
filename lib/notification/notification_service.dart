@@ -115,4 +115,9 @@ class NotificationService {
     stderr.writeln('scheduled time : ${scheduledTime}');
     developer.log("scheduled time : ${scheduledTime}");
   }
+
+  // cancel all scheduled notifications
+  void cancelAllNotifications () async {
+    await notificationPlugin.cancelAll();
+  }
 }
