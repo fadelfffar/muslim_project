@@ -15,11 +15,13 @@ dependencies:
   http: ^1.2.2
   permission_handler: ^11.3.1
   timezone: ^0.10.0
+  two_dimensional_scrollables: ^0.3.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  test: ^1.25.8
 
 flutter:
   uses-material-design: true

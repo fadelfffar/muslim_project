@@ -1,3 +1,5 @@
+import 'dart:developer' as developer;
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -27,7 +29,10 @@ class NotificationService {
   // time zone initialization
   final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
   tz.initializeTimeZones();
-  // optional: set local time zone, use with flutter_timezone
+  // Starting in version 2.0 of the plugin, scheduling notifications now requires 
+  // developers to specify a date and time relative to a specific time zone.
+  // required: set local time zone, use with flutter_timezone
+  // TODO: test time_zone
   tz.setLocalLocation(tz.getLocation('Asia/Jakarta'));
 
   // prepare iOS initialization
@@ -87,19 +92,25 @@ class NotificationService {
     int id = 0,
     String? title,
     String? body,
-    required DateTime scheduledTime,
+    required String scheduledTime,
   }) async {
-    notificationPlugin.zonedSchedule(
+    await notificationPlugin.zonedSchedule(
       id,
       title,
       body,
-      tz.TZDateTime.from(scheduledTime, tz.local),
-      await NotificationDetails(
+      tz.TZDateTime.parse(tz.local, scheduledTime),
+      NotificationDetails(
         android: AndroidNotificationDetails(
           'your channel id $randomId', 'your channel name',
-          channelDescription: 'your channel description'),
+          channelDescription: 'your channel description',
+          // priority: Priority.high,
+          // importance: Importance.high,
+          ),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
     );
+    // Print scheduledTime to log
+    stderr.writeln('scheduled time : ${scheduledTime}');
+    developer.log("scheduled time : ${scheduledTime}");
   }
 }

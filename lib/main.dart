@@ -4,7 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_project/notification/notification_service.dart';
 import 'package:muslim_project/pages/home_screen.dart';
+import 'package:muslim_project/pages/mosque_schedule_screen.dart';
 import 'package:muslim_project/pages/quiz_screen.dart';
+import 'package:muslim_project/widgets/table_explorer.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 
 
@@ -79,7 +81,8 @@ class _MyAppState extends State<MyApp> {
       {
         '/home': (context) => HomeScreen(),
         '/': (context) => QuizScreen(),
-        // '/view': (context) => ExampleApp(),
+        '/table': (context) => TableExplorer(),
+        '/view': (context) => MosqueScheduleScreen(),
       },
     );
   }

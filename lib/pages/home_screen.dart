@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int randomId = Random().nextInt(1000);
   int currentPageIndex = 0;
   late Future<Prayer> futurePrayer;
-  
+
   @override
   void initState() {
     super.initState();
@@ -280,14 +280,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {
                         NotificationService().showScheduledNotification(
                           id: Random().nextInt(1000),
-                          title: "Ashar Prayer Time has come",
+                          title: "Magrib Prayer Time has come",
                           body: snapshot.data!.dzuhur,
-                          scheduledTime: DateTime.now().add(const Duration(seconds: 10))
-                          // DateTime.parse("${justdate} ${snapshot.data!.dzuhur}"),
-                      );
-                      },
+                          // scheduledTime is the same as the current prayer scheduled time
+                          scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
+                          );
+                        },
                       child: Text("Show Notifications")
-                      );
+                    );
                   } else if (snapshot.hasError) {
                     return Text('Error: ${snapshot.error}');
                   } else {
