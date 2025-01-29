@@ -79,6 +79,10 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Badge(child: Icon(Icons.info_outline_rounded, color: Colors.black,)),
             label: 'Tentang',
           ),
+          NavigationDestination(
+            icon: Badge(child: Icon(Icons.settings, color: Colors.black,)),
+            label: 'Pengaturan',
+          ),
         ],
       ),
       body: <Widget>[
@@ -266,35 +270,6 @@ class _HomeScreenState extends State<HomeScreen> {
               const SizedBox(width: 40,),
               Image.asset("assets/logo-utsman-bin-affan.png", width: 80, height: 80,),
               const SizedBox(width: 40,),
-              FutureBuilder(
-                future: futurePrayer,
-                builder: (context, snapshot) {
-                  // Get the current date using DateTime.now(), example output "2025-01-09 22:59:24.702"
-                  final datenow = DateTime.now();
-                  // split datenow into two independent index
-                  final currentdate = "$datenow".split(" ");
-                  // get the first index of the current date
-                  final justdate = currentdate[0];
-                  if (snapshot.hasData) {
-                    return ElevatedButton(
-                      onPressed: () {
-                        NotificationService().showScheduledNotification(
-                          id: Random().nextInt(1000),
-                          title: "Magrib Prayer Time has come",
-                          body: snapshot.data!.dzuhur,
-                          // scheduledTime is the same as the current prayer scheduled time
-                          scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
-                          );
-                        },
-                      child: Text("Show Notifications")
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('Error: ${snapshot.error}');
-                  } else {
-                    return const Text("No data available");
-                  }
-                },
-              )
               ],
             ),
           ],
@@ -385,6 +360,94 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
+        Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              FutureBuilder(
+                future: futurePrayer,
+                builder: (context, snapshot) {
+                  // Get the current date using DateTime.now(), example output "2025-01-09 22:59:24.702"
+                  final datenow = DateTime.now();
+                  // split datenow into two independent index
+                  final currentdate = "$datenow".split(" ");
+                  // get the first index of the current date
+                  final justdate = currentdate[0];
+                  if (snapshot.hasData) {
+                    return Column(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {
+                            NotificationService().showScheduledNotification(
+                              id: Random().nextInt(1000),
+                              title: "Subuh Prayer Time is coming in 10 minutes",
+                              body: "Subuh is at ${snapshot.data!.subuh}",
+                              // scheduledTime is the same as the current prayer scheduled time
+                              scheduledTime: "${justdate} ${snapshot.data!.subuh}"
+                              );
+                            },
+                          child: Text("Make an Reminder 10 Minutes before Subuh time")
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            NotificationService().showScheduledNotification(
+                              id: Random().nextInt(1000),
+                              title: "Dzuhur Prayer Time is coming in 10 minutes",
+                              body: "Dzuhur is at ${snapshot.data!.dzuhur}",
+                              // scheduledTime is the same as the current prayer scheduled time
+                              scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
+                              );
+                            },
+                          child: Text("Make an Reminder 10 Minutes before Dzuhur time")
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            NotificationService().showScheduledNotification(
+                              id: Random().nextInt(1000),
+                              title: "Ashar Prayer Time is coming in 10 minutes",
+                              body: "Ashar is at ${snapshot.data!.ashar}",
+                              // scheduledTime is the same as the current prayer scheduled time
+                              scheduledTime: "${justdate} ${snapshot.data!.ashar}"
+                              );
+                            },
+                          child: Text("Make an Reminder 10 Minutes before Ashar time")
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            NotificationService().showScheduledNotification(
+                              id: Random().nextInt(1000),
+                              title: "Maghrib Prayer Time is coming in 10 minutes",
+                              body: "Maghrib is at ${snapshot.data!.maghrib}",
+                              // scheduledTime is the same as the current prayer scheduled time
+                              scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
+                              );
+                            },
+                          child: Text("Make an Reminder 10 Minutes before Maghrib time")
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            NotificationService().showScheduledNotification(
+                              id: Random().nextInt(1000),
+                              title: "Ashar Prayer Time is coming in 10 minutes",
+                              body: "Isya is at ${snapshot.data!.isya}",
+                              // scheduledTime is the same as the current prayer scheduled time
+                              scheduledTime: "${justdate} ${snapshot.data!.isya}"
+                              );
+                            },
+                          child: Text("Make an Reminder 10 Minutes before Isya time")
+                        ),
+                      ],
+                    );
+                  } else if (snapshot.hasError) {
+                    return Text('Error: ${snapshot.error}');
+                  } else {
+                    return const Text("No data available");
+                  }
+                },
+              )
+            ],
+          ),
+        )
       ][currentPageIndex],
     );
   }

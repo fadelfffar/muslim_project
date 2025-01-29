@@ -29,7 +29,7 @@ class NotificationService {
   // time zone initialization
   final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
   tz.initializeTimeZones();
-  // Starting in version 2.0 of the plugin, scheduling notifications now requires 
+  // Starting in version 2.0 of the plugin, scheduling notifications now requires
   // developers to specify a date and time relative to a specific time zone.
   // required: set local time zone, use with flutter_timezone
   // TODO: test time_zone
@@ -68,6 +68,7 @@ class NotificationService {
       iOS: DarwinNotificationDetails(),
     );
   }
+  
 
   // Show Notification
   Future<void> showNotification({
@@ -98,7 +99,7 @@ class NotificationService {
       id,
       title,
       body,
-      tz.TZDateTime.parse(tz.local, scheduledTime),
+      tz.TZDateTime.parse(tz.local, scheduledTime).subtract(const Duration(minutes: 10)),
       NotificationDetails(
         android: AndroidNotificationDetails(
           'your channel id $randomId', 'your channel name',
@@ -108,6 +109,7 @@ class NotificationService {
           ),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+      matchDateTimeComponents: DateTimeComponents.time
     );
     // Print scheduledTime to log
     stderr.writeln('scheduled time : ${scheduledTime}');
