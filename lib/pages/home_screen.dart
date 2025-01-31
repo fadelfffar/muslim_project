@@ -37,28 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Colors.white
           ),
         ),
-        //// define second appbar height
-        /// uncomment below to show background image with opacity
-        // bottom: PreferredSize(
-          // TODO: fix prefSize height from appBar
-            // preferredSize:  const Size.fromHeight(48),
-            // child: Opacity(
-            //   opacity: 0.3,
-              // child: Stack(
-              //   children: [
-              //     Image.asset(
-              //       "assets/header-masjid.png",
-              //       fit: BoxFit.cover,
-              //       // ACTION: add Image scale and multiply by 24
-              //       scale: 0.1,
-              //     ),
-              //     ClipRRect(
-              //       clipBehavior: Clip.antiAlias,
-              //     ),
-              //   ],
-              // ),
-            // ),
-          // ),
       ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -76,11 +54,11 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Beranda',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.info_outline_rounded, color: Colors.black,)),
-            label: 'Tentang',
+            icon: Icon(Icons.schedule, color: Colors.black,),
+            label: 'Jadwal',
           ),
           NavigationDestination(
-            icon: Badge(child: Icon(Icons.settings, color: Colors.black,)),
+            icon: Icon(Icons.settings, color: Colors.black,),
             label: 'Pengaturan',
           ),
         ],
@@ -239,213 +217,101 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               }
             ),
-            const SizedBox(height: 12,),
-            Text("Community & Partners",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Theme.of(context).colorScheme.onPrimary
-            ),
-          ),
-          const Text("Berikut adalah komunitas dan kemitraan kami untuk senantiasa bersinergi dalam kebaikan",
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w400
-            ),
-          ),
-          const SizedBox(height: 20,),
-          // TODO: change this into ListView
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset("assets/logo-bim.png", width: 80, height: 80,),
-              const SizedBox(width: 40,),
-              Image.asset("assets/logo-revation-foundation.jpg", width: 80, height: 80,),
-              const SizedBox(width: 40,),
-              Image.asset("assets/logo-lattov.png", width: 80, height: 80,),
-              const SizedBox(width: 40,),
-              Image.asset("assets/logo-undang-dang.png", width: 80, height: 80,),
-              const SizedBox(width: 40,),
-              Image.asset("assets/logo-yoga-ekatama.png", width: 80, height: 80,),
-              const SizedBox(width: 40,),
-              Image.asset("assets/logo-utsman-bin-affan.png", width: 80, height: 80,),
-              const SizedBox(width: 40,),
-              ],
-            ),
           ],
         ),
       ),
-      /// Info page
-        Container(
-          color: const Color(0xffB7E369),
-          child: const Column(
-            children: <Widget>[
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text('Masjid bukan sekedar Rumah Allah, melainkan juga Solusi Ummat'),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text('Masjid juga menjadi tempat untuk belajar nilai-nilai etika, kesalehan, dan kemurahan hati kepada masyarakat, sehingga masing-masing kita dapat tumbuh menjadi individu yang bertanggung jawab dan berkontribusi positif dalam masyarakat.'),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Sambutan Ketua Takmir Masjid Al Istiqomah, Hartawan Bayu Prasetyo"),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Assalamualaikum warahmatullahi wabarakatuh, Puji syukur kami panjatkan ke hadirat Allah SWT, atas segala limpahan rahmat dan hidayah-Nya, yang telah mengantarkan kita semua dalam keadaan sehat dan dalam keadaan yang penuh berkah. Saya, sebagai Ketua Takmir Masjid Al Istiqomah, dengan rendah hati mengucapkan selamat datang kepada seluruh jamaah dan para tamu yang hadir di Masjid Al Istiqomah. Sebagai takmir, tugas kami adalah untuk menjaga dan memelihara kebersihan serta kesakralan Masjid Al Istiqomah. Kami berkomitmen untuk menyediakan fasilitas dan program yang mengakomodasi kebutuhan spiritual dan keagamaan jamaah. Bersama-sama, mari kita jaga dan tingkatkan kebersamaan, solidaritas, dan silaturahmi di antara kita sebagai umat Muslim. Saya berharap semoga Masjid Al Istiqomah menjadi tempat yang tidak hanya menjadi pusat ibadah, tetapi juga menjadi pusat pendidikan, kegiatan sosial, dan kegiatan keagamaan yang bermanfaat bagi seluruh umat. Bersama-sama, mari kita wujudkan visi dan misi kita untuk meningkatkan pendalaman iman dan ketaqwaan kepada Allah SWT. Wassalamu'alaikum warahmatullahi wabarakatuh."),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Visi Misi"),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Masjid adalah tempat ibadah bagi umat Muslim. Kata masjid berasal dari bahasa Arab yang berarti tempat sujud. Masjid digunakan sebagai tempat untuk shalat, menghadiri kegiatan keagamaan, dan menjalin hubungan dengan komunitas Muslim lainnya.h"),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Misi Kami"),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Membangun umat yang kuat: Masjid dapat menjadi pusat pembinaan umat yang kuat, yang dilandasi oleh keimanan dan ketaqwaan kepada Allah swt."),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Menjadi pusat informasi: Masjid dapat memainkan peran yang penting dalam menyebarkan informasi tentang kegiatan-kegiatan keagamaan dan sosial di lingkungan sekitarnya.    "),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Menyediakan fasilitas pendidikan: Masjid bisa memfasilitasi program-program pendidikan bagi anak-anak, remaja, dan orang dewasa dalam mengembangkan pengetahuan keagamaan serta ketrampilan kehidupan sehari-hari."),
-                  ),
-                ),
-              ),
-              Flexible(
-                child: Card(
-                  child: ListTile(
-                    title: Text("Meningkatkan silaturahim: Masjid dapat menjadi tempat yang mempererat hubungan sosial antara jemaahnya, serta juga antara masjid dan masyarakat sekitarnya."),
-                  ),
-                ),
-              ),
-            ],
-          ),
+      Container(
+        padding: EdgeInsets.all(16),
+        child: Center(
+          child: Text("Segera Hadir", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),),
         ),
-        Container(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            children: [
-              FutureBuilder(
-                future: futurePrayer,
-                builder: (context, snapshot) {
-                  // Get the current date using DateTime.now(), example output "2025-01-09 22:59:24.702"
-                  final datenow = DateTime.now();
-                  // split datenow into two independent index
-                  final currentdate = "$datenow".split(" ");
-                  // get the first index of the current date
-                  final justdate = currentdate[0];
-                  if (snapshot.hasData) {
-                    return Column(
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {
-                            NotificationService().showScheduledNotification(
-                              id: Random().nextInt(1000),
-                              title: "Subuh Prayer Time is coming in 30 minutes",
-                              body: "Subuh is at ${snapshot.data!.subuh}",
-                              // scheduledTime is the same as the current prayer scheduled time
-                              scheduledTime: "${justdate} ${snapshot.data!.subuh}"
-                              );
-                            },
-                          child: Text("Make an Reminder 30 Minutes before Subuh time")
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            NotificationService().showScheduledNotification(
-                              id: Random().nextInt(1000),
-                              title: "Dzuhur Prayer Time is coming in 30 minutes",
-                              body: "Dzuhur is at ${snapshot.data!.dzuhur}",
-                              // scheduledTime is the same as the current prayer scheduled time
-                              scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
-                              );
-                            },
-                          child: Text("Make an Reminder 30 Minutes before Dzuhur time")
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            NotificationService().showScheduledNotification(
-                              id: Random().nextInt(1000),
-                              title: "Ashar Prayer Time is coming in 30 minutes",
-                              body: "Ashar is at ${snapshot.data!.ashar}",
-                              // scheduledTime is the same as the current prayer scheduled time
-                              scheduledTime: "${justdate} ${snapshot.data!.ashar}"
-                              );
-                            },
-                          child: Text("Make an Reminder 30 Minutes before Ashar time")
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            NotificationService().showScheduledNotification(
-                              id: Random().nextInt(1000),
-                              title: "Maghrib Prayer Time is coming in 30 minutes",
-                              body: "Maghrib is at ${snapshot.data!.maghrib}",
-                              // scheduledTime is the same as the current prayer scheduled time
-                              scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
-                              );
-                            },
-                          child: Text("Make an Reminder 30 Minutes before Maghrib time")
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            NotificationService().showScheduledNotification(
-                              id: Random().nextInt(1000),
-                              title: "Ashar Prayer Time is coming in 30 minutes",
-                              body: "Isya is at ${snapshot.data!.isya}",
-                              // scheduledTime is the same as the current prayer scheduled time
-                              scheduledTime: "${justdate} ${snapshot.data!.isya}"
-                              );
-                            },
-                          child: Text("Make an Reminder 30 Minutes before Isya time")
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            NotificationService().cancelAllNotifications();
-                          }, child: Text("cancel all notifications"))
-                      ],
-                    );
-                  } else if (snapshot.hasError) {
-                    return Text('Error: ${snapshot.error}');
-                  } else {
-                    return const Text("No data available");
+      ),
+      Container(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          children: [
+            FutureBuilder(
+              future: futurePrayer,
+              builder: (context, snapshot) {
+                // Get the current date using DateTime.now(), example output "2025-01-09 22:59:24.702"
+                final datenow = DateTime.now();
+                // split datenow into two independent index
+                final currentdate = "$datenow".split(" ");
+                // get the first index of the current date
+                final justdate = currentdate[0];
+                if (snapshot.hasData) {
+                  return Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().showScheduledNotification(
+                            id: Random().nextInt(1000),
+                            title: "Subuh Prayer Time is coming in 30 minutes",
+                            body: "Subuh is at ${snapshot.data!.subuh}",
+                            // scheduledTime is the same as the current prayer scheduled time
+                            scheduledTime: "${justdate} ${snapshot.data!.subuh}"
+                            );
+                          },
+                        child: Text("Make an Reminder 30 Minutes before Subuh time")
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().showScheduledNotification(
+                            id: Random().nextInt(1000),
+                            title: "Dzuhur Prayer Time is coming in 30 minutes",
+                            body: "Dzuhur is at ${snapshot.data!.dzuhur}",
+                            // scheduledTime is the same as the current prayer scheduled time
+                            scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
+                            );
+                          },
+                        child: Text("Make an Reminder 30 Minutes before Dzuhur time")
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().showScheduledNotification(
+                            id: Random().nextInt(1000),
+                            title: "Ashar Prayer Time is coming in 30 minutes",
+                            body: "Ashar is at ${snapshot.data!.ashar}",
+                            // scheduledTime is the same as the current prayer scheduled time
+                            scheduledTime: "${justdate} ${snapshot.data!.ashar}"
+                            );
+                          },
+                        child: Text("Make an Reminder 30 Minutes before Ashar time")
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().showScheduledNotification(
+                            id: Random().nextInt(1000),
+                            title: "Maghrib Prayer Time is coming in 30 minutes",
+                            body: "Maghrib is at ${snapshot.data!.maghrib}",
+                            // scheduledTime is the same as the current prayer scheduled time
+                            scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
+                            );
+                          },
+                        child: Text("Make an Reminder 30 Minutes before Maghrib time")
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().showScheduledNotification(
+                            id: Random().nextInt(1000),
+                            title: "Ashar Prayer Time is coming in 30 minutes",
+                            body: "Isya is at ${snapshot.data!.isya}",
+                            // scheduledTime is the same as the current prayer scheduled time
+                            scheduledTime: "${justdate} ${snapshot.data!.isya}"
+                            );
+                          },
+                        child: Text("Make an Reminder 30 Minutes before Isya time")
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().cancelAllNotifications();
+                        }, child: Text("cancel all notifications"))
+                    ],
+                  );
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  return const Text("No data available");
                   }
                 },
               )
