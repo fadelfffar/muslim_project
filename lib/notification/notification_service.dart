@@ -104,8 +104,8 @@ class NotificationService {
         android: AndroidNotificationDetails(
           'your channel id $randomId', 'your channel name',
           channelDescription: 'your channel description',
-          // priority: Priority.high,
-          // importance: Importance.high,
+          priority: Priority.high,
+          importance: Importance.high,
           ),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,

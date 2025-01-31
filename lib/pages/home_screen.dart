@@ -380,61 +380,61 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPressed: () {
                             NotificationService().showScheduledNotification(
                               id: Random().nextInt(1000),
-                              title: "Subuh Prayer Time is coming in 10 minutes",
+                              title: "Subuh Prayer Time is coming in 30 minutes",
                               body: "Subuh is at ${snapshot.data!.subuh}",
                               // scheduledTime is the same as the current prayer scheduled time
                               scheduledTime: "${justdate} ${snapshot.data!.subuh}"
                               );
                             },
-                          child: Text("Make an Reminder 10 Minutes before Subuh time")
+                          child: Text("Make an Reminder 30 Minutes before Subuh time")
                         ),
                         ElevatedButton(
                           onPressed: () {
                             NotificationService().showScheduledNotification(
                               id: Random().nextInt(1000),
-                              title: "Dzuhur Prayer Time is coming in 10 minutes",
+                              title: "Dzuhur Prayer Time is coming in 30 minutes",
                               body: "Dzuhur is at ${snapshot.data!.dzuhur}",
                               // scheduledTime is the same as the current prayer scheduled time
                               scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
                               );
                             },
-                          child: Text("Make an Reminder 10 Minutes before Dzuhur time")
+                          child: Text("Make an Reminder 30 Minutes before Dzuhur time")
                         ),
                         ElevatedButton(
                           onPressed: () {
                             NotificationService().showScheduledNotification(
                               id: Random().nextInt(1000),
-                              title: "Ashar Prayer Time is coming in 10 minutes",
+                              title: "Ashar Prayer Time is coming in 30 minutes",
                               body: "Ashar is at ${snapshot.data!.ashar}",
                               // scheduledTime is the same as the current prayer scheduled time
                               scheduledTime: "${justdate} ${snapshot.data!.ashar}"
                               );
                             },
-                          child: Text("Make an Reminder 10 Minutes before Ashar time")
+                          child: Text("Make an Reminder 30 Minutes before Ashar time")
                         ),
                         ElevatedButton(
                           onPressed: () {
                             NotificationService().showScheduledNotification(
                               id: Random().nextInt(1000),
-                              title: "Maghrib Prayer Time is coming in 10 minutes",
+                              title: "Maghrib Prayer Time is coming in 30 minutes",
                               body: "Maghrib is at ${snapshot.data!.maghrib}",
                               // scheduledTime is the same as the current prayer scheduled time
                               scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
                               );
                             },
-                          child: Text("Make an Reminder 10 Minutes before Maghrib time")
+                          child: Text("Make an Reminder 30 Minutes before Maghrib time")
                         ),
                         ElevatedButton(
                           onPressed: () {
                             NotificationService().showScheduledNotification(
                               id: Random().nextInt(1000),
-                              title: "Ashar Prayer Time is coming in 10 minutes",
+                              title: "Ashar Prayer Time is coming in 30 minutes",
                               body: "Isya is at ${snapshot.data!.isya}",
                               // scheduledTime is the same as the current prayer scheduled time
                               scheduledTime: "${justdate} ${snapshot.data!.isya}"
                               );
                             },
-                          child: Text("Make an Reminder 10 Minutes before Isya time")
+                          child: Text("Make an Reminder 30 Minutes before Isya time")
                         ),
                         ElevatedButton(
                           onPressed: () {
