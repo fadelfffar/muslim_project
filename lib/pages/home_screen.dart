@@ -378,12 +378,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         ElevatedButton(
                           onPressed: () {
-                            NotificationService().showScheduledNotification(
+                            NotificationService().showNotification(
                               id: Random().nextInt(1000),
                               title: "Subuh Prayer Time is coming in 10 minutes",
                               body: "Subuh is at ${snapshot.data!.subuh}",
                               // scheduledTime is the same as the current prayer scheduled time
-                              scheduledTime: "${justdate} ${snapshot.data!.subuh}"
+                              // scheduledTime: "${justdate} ${snapshot.data!.subuh}"
                               );
                             },
                           child: Text("Make an Reminder 10 Minutes before Subuh time")
