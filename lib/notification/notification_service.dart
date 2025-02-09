@@ -56,7 +56,7 @@ class NotificationService {
   NotificationDetails notificationDetails() {
     return const NotificationDetails(
       android: AndroidNotificationDetails(
-        '13321',
+        'adzan_sound',
         'Daily Notification',
         channelDescription: 'Daily Notification Channel Description',
         importance: Importance.max,
@@ -80,10 +80,14 @@ class NotificationService {
       id,
       title,
       body,
-      const NotificationDetails(
+      NotificationDetails(
         android: AndroidNotificationDetails(
-          'your channel id', 'your channel name',
-          channelDescription: 'your channel description'),
+          'your channel id $randomId',
+          'your channel name',
+          channelDescription: 'your channel description',
+          playSound: true,
+          sound: RawResourceAndroidNotificationSound('adzan_alaqsha')
+          ),
       ),
     );
   }
@@ -106,6 +110,8 @@ class NotificationService {
           channelDescription: 'your channel description',
           priority: Priority.high,
           importance: Importance.high,
+          playSound: true,
+          sound: RawResourceAndroidNotificationSound('res/raw/adzan_alaqsha')
           ),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,

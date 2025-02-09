@@ -244,68 +244,68 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          NotificationService().showScheduledNotification(
+                          NotificationService().showNotification(
                             id: Random().nextInt(1000),
-                            title: "Subuh Prayer Time is coming in 30 minutes",
-                            body: "Subuh is at ${snapshot.data!.subuh}",
+                            title: "Subuh akan tiba dalam sekitar 30 menit",
+                            body: "Waktu sholat Subuh tiba pada ${snapshot.data!.subuh}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            scheduledTime: "${justdate} ${snapshot.data!.subuh}"
+                            // scheduledTime: "${justdate} ${snapshot.data!.subuh}"
                             );
                           },
-                        child: Text("Make an Reminder 30 Minutes before Subuh time")
+                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Subuh")
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          NotificationService().showScheduledNotification(
+                          NotificationService().showNotification(
                             id: Random().nextInt(1000),
-                            title: "Dzuhur Prayer Time is coming in 30 minutes",
-                            body: "Dzuhur is at ${snapshot.data!.dzuhur}",
+                            title: "Dzuhur akan tiba dalam sekitar 30 menit",
+                            body: "Waktu sholat Dzuhur tiba pada ${snapshot.data!.dzuhur}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
+                            // scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
                             );
                           },
-                        child: Text("Make an Reminder 30 Minutes before Dzuhur time")
+                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Dzuhur")
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          NotificationService().showScheduledNotification(
+                          NotificationService().showNotification(
                             id: Random().nextInt(1000),
-                            title: "Ashar Prayer Time is coming in 30 minutes",
-                            body: "Ashar is at ${snapshot.data!.ashar}",
+                            title: "Ashar akan tiba dalam sekitar 30 menit",
+                            body: "Waktu sholat Ashar tiba pada Ashar ${snapshot.data!.ashar}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            scheduledTime: "${justdate} ${snapshot.data!.ashar}"
+                            // scheduledTime: "${justdate} ${snapshot.data!.ashar}"
                             );
                           },
-                        child: Text("Make an Reminder 30 Minutes before Ashar time")
+                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Ashar")
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          NotificationService().showScheduledNotification(
+                          NotificationService().showNotification(
                             id: Random().nextInt(1000),
-                            title: "Maghrib Prayer Time is coming in 30 minutes",
-                            body: "Maghrib is at ${snapshot.data!.maghrib}",
+                            title: "Maghrib akan tiba dalam sekitar 30 menit",
+                            body: "Waktu sholat Maghrib tiba pada ${snapshot.data!.maghrib}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
+                            // scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
                             );
                           },
-                        child: Text("Make an Reminder 30 Minutes before Maghrib time")
+                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Maghrib")
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          NotificationService().showScheduledNotification(
+                          NotificationService().showNotification(
                             id: Random().nextInt(1000),
-                            title: "Ashar Prayer Time is coming in 30 minutes",
-                            body: "Isya is at ${snapshot.data!.isya}",
+                            title: "Isya akan tiba dalam sekitar 30 menit",
+                            body: "Waktu sholat Isya tiba pada ${snapshot.data!.isya}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            scheduledTime: "${justdate} ${snapshot.data!.isya}"
+                            // scheduledTime: "${justdate} ${snapshot.data!.isya}"
                             );
                           },
-                        child: Text("Make an Reminder 30 Minutes before Isya time")
+                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Isya")
                       ),
                       ElevatedButton(
                         onPressed: () {
                           NotificationService().cancelAllNotifications();
-                        }, child: Text("cancel all notifications"))
+                        }, child: Text("Batalkan semua pengingat"))
                     ],
                   );
                 } else if (snapshot.hasError) {
