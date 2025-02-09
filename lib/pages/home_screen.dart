@@ -244,64 +244,93 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          NotificationService().showNotification(
+                          NotificationService().showScheduledNotification(
                             id: Random().nextInt(1000),
                             title: "Subuh akan tiba dalam sekitar 30 menit",
                             body: "Waktu sholat Subuh tiba pada ${snapshot.data!.subuh}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            // scheduledTime: "${justdate} ${snapshot.data!.subuh}"
+                            scheduledTime: "${justdate} ${snapshot.data!.subuh}"
                             );
-                          },
-                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Subuh")
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          NotificationService().showNotification(
+                          NotificationService().showScheduledNotification(
                             id: Random().nextInt(1000),
                             title: "Dzuhur akan tiba dalam sekitar 30 menit",
                             body: "Waktu sholat Dzuhur tiba pada ${snapshot.data!.dzuhur}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            // scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
+                            scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
                             );
-                          },
-                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Dzuhur")
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          NotificationService().showNotification(
+                          NotificationService().showScheduledNotification(
                             id: Random().nextInt(1000),
                             title: "Ashar akan tiba dalam sekitar 30 menit",
                             body: "Waktu sholat Ashar tiba pada Ashar ${snapshot.data!.ashar}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            // scheduledTime: "${justdate} ${snapshot.data!.ashar}"
+                            scheduledTime: "${justdate} ${snapshot.data!.ashar}"
                             );
-                          },
-                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Ashar")
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          NotificationService().showNotification(
+                          NotificationService().showScheduledNotification(
                             id: Random().nextInt(1000),
                             title: "Maghrib akan tiba dalam sekitar 30 menit",
                             body: "Waktu sholat Maghrib tiba pada ${snapshot.data!.maghrib}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            // scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
+                            scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
                             );
-                          },
-                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Maghrib")
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          NotificationService().showNotification(
+                          NotificationService().showScheduledNotification(
                             id: Random().nextInt(1000),
                             title: "Isya akan tiba dalam sekitar 30 menit",
                             body: "Waktu sholat Isya tiba pada ${snapshot.data!.isya}",
                             // scheduledTime is the same as the current prayer scheduled time
-                            // scheduledTime: "${justdate} ${snapshot.data!.isya}"
+                            scheduledTime: "${justdate} ${snapshot.data!.isya}"
                             );
                           },
-                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat Isya")
+                        child: Text("Buat Pengingat 30 menit sebelum waktu sholat (semua 5 waktu)")
+                        // Text("Buat Pengingat 30 menit sebelum waktu sholat Subuh")
                       ),
+                      // ElevatedButton(
+                      //   onPressed: () {
+                      //     NotificationService().showNotification(
+                      //       id: Random().nextInt(1000),
+                      //       title: "Dzuhur akan tiba dalam sekitar 30 menit",
+                      //       body: "Waktu sholat Dzuhur tiba pada ${snapshot.data!.dzuhur}",
+                      //       // scheduledTime is the same as the current prayer scheduled time
+                      //       // scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
+                      //       );
+                      //     },
+                      //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Dzuhur")
+                      // ),
+                      // ElevatedButton(
+                      //   onPressed: () {
+                      //     NotificationService().showNotification(
+                      //       id: Random().nextInt(1000),
+                      //       title: "Ashar akan tiba dalam sekitar 30 menit",
+                      //       body: "Waktu sholat Ashar tiba pada Ashar ${snapshot.data!.ashar}",
+                      //       // scheduledTime is the same as the current prayer scheduled time
+                      //       // scheduledTime: "${justdate} ${snapshot.data!.ashar}"
+                      //       );
+                      //     },
+                      //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Ashar")
+                      // ),
+                      // ElevatedButton(
+                      //   onPressed: () {
+                      //     NotificationService().showNotification(
+                      //       id: Random().nextInt(1000),
+                      //       title: "Maghrib akan tiba dalam sekitar 30 menit",
+                      //       body: "Waktu sholat Maghrib tiba pada ${snapshot.data!.maghrib}",
+                      //       // scheduledTime is the same as the current prayer scheduled time
+                      //       // scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
+                      //       );
+                      //     },
+                      //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Maghrib")
+                      // ),
+                      // ElevatedButton(
+                      //   onPressed: () {
+                      //     NotificationService().showNotification(
+                      //       id: Random().nextInt(1000),
+                      //       title: "Isya akan tiba dalam sekitar 30 menit",
+                      //       body: "Waktu sholat Isya tiba pada ${snapshot.data!.isya}",
+                      //       // scheduledTime is the same as the current prayer scheduled time
+                      //       // scheduledTime: "${justdate} ${snapshot.data!.isya}"
+                      //       );
+                      //     },
+                      //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Isya")
+                      // ),
                       ElevatedButton(
                         onPressed: () {
                           NotificationService().cancelAllNotifications();

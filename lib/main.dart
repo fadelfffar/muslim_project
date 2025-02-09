@@ -6,10 +6,23 @@ import 'package:muslim_project/notification/notification_service.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 
+// mixin snapshot {
+//   late Future<Prayer> futurePrayer;
+// }
+
+// Future<void> asharPrayer = NotificationService().showNotification(
+//   id: Random().nextInt(1000),
+//   title: "Dzuhur akan tiba dalam sekitar 30 menit",
+//   body: "Waktu sholat Dzuhur tiba pada ${snapshot.data!.dzuhur}",
+  // scheduledTime is the same as the current prayer scheduled time
+  // scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
+// );
 
 void main() {
+  
   WidgetsFlutterBinding.ensureInitialized();
 
+  
   // init notification
   NotificationService().initNotification();
   // Don’t forget to call tz.initializeTimeZones() in your main() function. Missing this can lead to scheduling issues.

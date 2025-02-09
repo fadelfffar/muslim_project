@@ -85,8 +85,8 @@ class NotificationService {
           'your channel id $randomId',
           'your channel name',
           channelDescription: 'your channel description',
-          playSound: true,
-          sound: RawResourceAndroidNotificationSound('adzan_alaqsha')
+          // playSound: true,
+          // sound: RawResourceAndroidNotificationSound('adzan_alaqsha')
           ),
       ),
     );
@@ -110,8 +110,8 @@ class NotificationService {
           channelDescription: 'your channel description',
           priority: Priority.high,
           importance: Importance.high,
-          playSound: true,
-          sound: RawResourceAndroidNotificationSound('res/raw/adzan_alaqsha')
+          // playSound: true,
+          // sound: RawResourceAndroidNotificationSound('res/raw/adzan_alaqsha')
           ),
       ),
       androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
