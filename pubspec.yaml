@@ -5,6 +5,7 @@ version: 0.1.0
 
 environment:
   sdk: ^3.6.2
+  flutter: ">=3.22.0"
 
 dependencies:
   android_alarm_manager_plus: ^4.0.5

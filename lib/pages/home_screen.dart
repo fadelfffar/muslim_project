@@ -47,6 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color(0xff8FC332),
         indicatorColor: const Color(0xffF9FCF2),
         selectedIndex: currentPageIndex,
+        // list of icons
+        // shown by index
         destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(Icons.home, color: Colors.black,),
@@ -54,16 +56,18 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Beranda',
           ),
           NavigationDestination(
-            icon: Icon(Icons.schedule, color: Colors.black,),
-            label: 'Jadwal',
-          ),
-          NavigationDestination(
             icon: Icon(Icons.settings, color: Colors.black,),
             label: 'Pengaturan',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.date_range_outlined, color: Colors.black,),
+            label: 'Jadwal Acara Masjid',
           ),
         ],
       ),
       body: <Widget>[
+        // list of icons
+        // shown by index
         /// Home page
         Container(
         padding: const EdgeInsets.all(20),
@@ -220,14 +224,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      
+      // Reminder Settings Screen
       Container(
-        padding: EdgeInsets.all(16),
-        child: Center(
-          child: Text("Segera Hadir", style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500),),
-        ),
-      ),
-      Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(20),
+        color: const Color(0xffB7E369),
+        constraints: const BoxConstraints.expand(width: 2400, height: 800),
         child: Column(
           children: [
             FutureBuilder(
@@ -283,6 +285,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Text("Buat Pengingat 30 menit sebelum waktu sholat (semua 5 waktu)")
                         // Text("Buat Pengingat 30 menit sebelum waktu sholat Subuh")
                       ),
+                      ElevatedButton(
+                        onPressed: () {
+                          NotificationService().cancelAllNotifications();
+                        }, child: Text("Batalkan semua pengingat"))
                       // ElevatedButton(
                       //   onPressed: () {
                       //     NotificationService().showNotification(
@@ -331,10 +337,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       //     },
                       //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Isya")
                       // ),
-                      ElevatedButton(
-                        onPressed: () {
-                          NotificationService().cancelAllNotifications();
-                        }, child: Text("Batalkan semua pengingat"))
+                      
                     ],
                   );
                 } else if (snapshot.hasError) {
@@ -346,7 +349,58 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           ),
-        )
+        ),
+
+        // Mosque Event Schedule
+        Container(
+          padding: const EdgeInsets.all(20),
+          color: const Color(0xffB7E369),
+          constraints: const BoxConstraints.expand(width: 2400, height: 800),
+          child: const Column(
+            children: [
+              SizedBox(height: 40,),
+              Card(
+                color: const Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan kesatu tanggal 2 Februari 2025"),
+                      Text("Ustadz Ahmad Fauzan S.Si Hafidzahullahu ta'ala"),
+                      Text("Tema : Riba, Dosa Besar Yang Menghancurkan")
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: const Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan kedua tanggal 9 Februari 2025"),
+                      Center(child: Text("Ustadz Agung Hidayah Saefullah, C.LQ Hafidzahullahu ta'ala")),
+                      Text("Tema : Ruqoyyah Putri Rosulullah")
+                    ],
+                  ),
+                ),
+              ),
+              Card(
+                color: const Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
+                      Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
+                      Text("Tema : Etika Bersilaturahmi")
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ][currentPageIndex],
     );
   }
