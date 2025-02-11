@@ -356,48 +356,31 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.all(20),
           color: const Color(0xffB7E369),
           constraints: const BoxConstraints.expand(width: 2400, height: 800),
-          child: const Column(
-            children: [
-              SizedBox(height: 40,),
-              Card(
-                color: const Color(0xffF9FCF2),
-                child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      Text("Ahad Pekan kesatu tanggal 2 Februari 2025"),
-                      Text("Ustadz Ahmad Fauzan S.Si Hafidzahullahu ta'ala"),
-                      Text("Tema : Riba, Dosa Besar Yang Menghancurkan")
-                    ],
+          child:  ListView(
+            // children: [
+            //   Column(
+              children: [
+                SizedBox(height: 40,),
+                Flexible(
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStatePropertyAll(Color(0xffF9FCF2)),
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12.0),
+                      ))
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/details');
+                    },
+                    child: ListTile(
+                      leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
+                      title: Text("Kajian Syuruq"),
+                      subtitle: Text("Setiap Ahad pagi setelah subuh"),
+                    )
                   ),
                 ),
-              ),
-              Card(
-                color: const Color(0xffF9FCF2),
-                child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      Text("Ahad Pekan kedua tanggal 9 Februari 2025"),
-                      Center(child: Text("Ustadz Agung Hidayah Saefullah, C.LQ Hafidzahullahu ta'ala")),
-                      Text("Tema : Ruqoyyah Putri Rosulullah")
-                    ],
-                  ),
-                ),
-              ),
-              Card(
-                color: const Color(0xffF9FCF2),
-                child: Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Column(
-                    children: [
-                      Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                      Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                      Text("Tema : Etika Bersilaturahmi")
-                    ],
-                  ),
-                ),
-              ),
+                // ],
+              // ),
             ],
           ),
         ),

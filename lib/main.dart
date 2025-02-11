@@ -3,6 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_project/notification/notification_service.dart';
+import 'package:muslim_project/pages/details_screen.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 
@@ -89,6 +90,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/home',
       routes: {
         '/home': (context) => HomeScreen(),
+        '/details': (context) => DetailsScreen()
       },
     );
   }
