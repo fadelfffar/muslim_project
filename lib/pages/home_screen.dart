@@ -380,22 +380,22 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               SizedBox(height: 12,),
               Flexible(
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
-                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12.0),
-                      ))
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/maghrib_jumat');
-                    },
-                    child: ListTile(
-                      leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
-                      title: const Text("Kajian Ba'da Maghrib Jumat"),
-                      subtitle: const Text("Setiap Jumat malam setelah Maghrib"),
-                    )
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ))
                   ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/maghrib_jumat');
+                  },
+                  child: ListTile(
+                    leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
+                    title: const Text("Kajian Ba'da Maghrib Jumat"),
+                    subtitle: const Text("Setiap Jumat malam setelah Maghrib"),
+                  )
+                ),
                 ),
             ],
           ),
