@@ -241,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ))
@@ -260,7 +260,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ))
@@ -279,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ))
@@ -298,7 +298,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ))
@@ -317,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ))
@@ -336,7 +336,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
                     shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12.0),
                     ))
@@ -445,11 +445,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             onPressed: () {
                               NotificationService().cancelAllNotifications();
                             },
-                            child: Text("Batalkan semua pengingat"),
                             style: const ButtonStyle(
                               backgroundColor: WidgetStatePropertyAll(Color(0xffF9FCF2)),
                               fixedSize: WidgetStatePropertyAll(Size(360, 64)),
                           ),
+                            child: const Text("Batalkan semua pengingat"),
                         ),
                         // )
                         // ElevatedButton(
