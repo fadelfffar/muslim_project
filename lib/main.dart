@@ -64,12 +64,13 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
         // Project wide Card themes, change this to change all card styles
         cardTheme: CardTheme(
-          color: Color(0xffF9FCF2),
+          color: const Color(0xffF9FCF2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
         ),
         navigationBarTheme: const NavigationBarThemeData(
+          height: 88,
           backgroundColor: Color(0xff1A7149),
           indicatorColor: Color(0xffF9FCF2),
           labelTextStyle: WidgetStatePropertyAll(TextStyle( color:  Color(0xffDAFAD8), fontWeight: FontWeight.w500)),
@@ -79,12 +80,12 @@ class _MyAppState extends State<MyApp> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12.0),
           ),
-          titleTextStyle: TextStyle(
+          titleTextStyle: const TextStyle(
             color: Color(0xff778288),
             fontSize: 14,
             fontWeight: FontWeight.w400
           ),
-          subtitleTextStyle: TextStyle(
+          subtitleTextStyle: const TextStyle(
             color: Color(0xff474E52,),
             fontWeight: FontWeight.bold,
             fontSize: 18

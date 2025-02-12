@@ -34,7 +34,7 @@ class _TahsinAkwanScreenState extends State<TahsinAkwanScreen> {
       body: Container(
         color: const Color(0xff359D59),
         child: const Center(
-          child: Text("Coming Soon", style: TextStyle(fontWeight: FontWeight.bold),),
+          child: Text("Coming Soon", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
         ),
       ),
     );
