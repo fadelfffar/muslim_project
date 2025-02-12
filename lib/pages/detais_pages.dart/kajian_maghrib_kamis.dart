@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class KajianSyuruqScreen extends StatefulWidget {
-  const KajianSyuruqScreen({super.key});
+class KajianMaghribKamisScreen extends StatefulWidget {
+  const KajianMaghribKamisScreen({super.key});
 
   @override
-  State<KajianSyuruqScreen> createState() => _KajianSyuruqScreenState();
+  State<KajianMaghribKamisScreen> createState() => _KajianMaghribKamisScreenState();
 }
 
-class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
+class _KajianMaghribKamisScreenState extends State<KajianMaghribKamisScreen> {
   bool _customTileExpanded = false;
   @override
   Widget build(BuildContext context) {
@@ -47,10 +47,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan pertama"),
-                      Text("tanggal 2 Februari 2025"),
-                      Text("Ustadz Ahmad Fauzan S.Si Hafidzahullahu ta'ala"),
-                      Text("Tema : Riba, Dosa Besar Yang Menghancurkan")
+                      Text("Kamis Pekan pertama"),
+                      Text("tanggal 6 Februari 2025"),
+                      Text("Ustadz Mujahid Aslam S.Pd (Alumni LIPIA)"),
+                      Text("Tema : Tematik")
                     ],
                   ),
                 ),
@@ -65,10 +65,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan kedua"),
-                      Text("tanggal 9 Februari 2025"),
-                      Text("Ustadz Agung Hidayah Saefullah, C.LQ Hafidzahullahu ta'ala", textAlign: TextAlign.center,),
-                      Text("Tema : Ruqoyyah Putri Rosulullah")
+                      Text("Kamis Pekan kedua"),
+                      Text("tanggal 13 Februari 2025"),
+                      Text("Ustadz Mujahid Aslam S.Pd (Alumni LIPIA)", textAlign: TextAlign.center,),
+                      Text("Tema : Tematik")
                     ],
                   ),
                 ),
@@ -83,10 +83,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan ketiga"),
-                      Text("tanggal 16 Februari 2025"),
-                      Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                      Text("Tema : Etika Bersilaturahmi")
+                      Text("Kamis Pekan ketiga"),
+                      Text("tanggal 20 Februari 2025"),
+                      Text("Ustadz Mujahid Aslam S.Pd (Alumni LIPIA)"),
+                      Text("Tema : Tematik")
                     ],
                   ),
                 ),
@@ -101,10 +101,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan keempat"),
-                      Text("tanggal 23 Februari 2025"),
-                      Text("Ustadz Abu Ukasyah A.Md Hafidzahullahu ta'ala"),
-                      Text("Tema : Kewajiban dalam Islam")
+                      Text("Kamis Pekan keempat"),
+                      Text("tanggal 27 Februari 2025"),
+                      Text("Ustadz Mujahid Aslam S.Pd (Alumni LIPIA)"),
+                      Text("Tema : Tematik")
                     ],
                   ),
                 ),

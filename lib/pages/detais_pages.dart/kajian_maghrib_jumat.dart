@@ -28,6 +28,8 @@ class _KajianMaghribJumatScreenState extends State<KajianMaghribJumatScreen> {
         onPressed: () {
           Navigator.pop(context);
         },
+        backgroundColor: const Color(0xff1A7149),
+        foregroundColor: const Color(0xffDAFAD8),
         child: const Icon(Icons.navigate_before),
       ),
       body: Container(
@@ -100,7 +102,7 @@ class _KajianMaghribJumatScreenState extends State<KajianMaghribJumatScreen> {
                   child: Column(
                     children: [
                       Text("Jumat Pekan keempat"),
-                      Text("tanggal 23 Februari 2025"),
+                      Text("tanggal 28 Februari 2025"),
                       Text("Ustadz Liman Pujowaluyo S.Thi"),
                       Text("Tema : Kitab Minjahul Muslimin")
                     ],

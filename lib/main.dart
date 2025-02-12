@@ -8,6 +8,10 @@ import 'package:muslim_project/pages/home_screen.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 
 import 'pages/detais_pages.dart/kajian_maghrib_jumat.dart';
+import 'pages/detais_pages.dart/kajian_maghrib_kamis.dart';
+import 'pages/detais_pages.dart/khutbah_jumat.dart';
+import 'pages/detais_pages.dart/tahsin_akwan.dart';
+import 'pages/detais_pages.dart/tahsin_ikwan.dart';
 
 // mixin snapshot {
 //   late Future<Prayer> futurePrayer;
@@ -97,8 +101,12 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/home',
       routes: {
         '/home': (context) => const HomeScreen(),
+        '/maghrib_senin': (context) => const TahsinIkwanScreen(),
+        '/maghrib_selasa': (context) => const TahsinAkwanScreen(),
+        '/maghrib_kamis': (context) => const KajianMaghribKamisScreen(),
+        '/khutbah-jumat': (context) => const KhutbahJumatScreen(),
+        '/maghrib_jumat': (context) => const KajianMaghribJumatScreen(),
         '/syuruq': (context) => const KajianSyuruqScreen(),
-        '/maghrib_jumat': (context) => const KajianMaghribJumatScreen()
       },
     );
   }

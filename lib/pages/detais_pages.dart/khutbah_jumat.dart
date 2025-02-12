@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class KajianSyuruqScreen extends StatefulWidget {
-  const KajianSyuruqScreen({super.key});
+class KhutbahJumatScreen extends StatefulWidget {
+  const KhutbahJumatScreen({super.key});
 
   @override
-  State<KajianSyuruqScreen> createState() => _KajianSyuruqScreenState();
+  State<KhutbahJumatScreen> createState() => _KhutbahJumatScreenState();
 }
 
-class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
+class _KhutbahJumatScreenState extends State<KhutbahJumatScreen> {
   bool _customTileExpanded = false;
   @override
   Widget build(BuildContext context) {
@@ -47,10 +47,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan pertama"),
-                      Text("tanggal 2 Februari 2025"),
-                      Text("Ustadz Ahmad Fauzan S.Si Hafidzahullahu ta'ala"),
-                      Text("Tema : Riba, Dosa Besar Yang Menghancurkan")
+                      Text("Jumat Pekan pertama"),
+                      Text("tanggal 7 Februari 2025"),
+                      Text("Ustadz Abu Ukasyah, A.Md Hafidzahullah ta'ala"),
+                      Text("Tema : Urgensi Tazkiyatun Nufus")
                     ],
                   ),
                 ),
@@ -65,10 +65,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan kedua"),
-                      Text("tanggal 9 Februari 2025"),
-                      Text("Ustadz Agung Hidayah Saefullah, C.LQ Hafidzahullahu ta'ala", textAlign: TextAlign.center,),
-                      Text("Tema : Ruqoyyah Putri Rosulullah")
+                      Text("Jumat Pekan kedua"),
+                      Text("tanggal 14 Februari 2025"),
+                      Text("Ustadz Wahyu Nur Hidayat, C.EQ Hafidzahullah ta'ala", textAlign: TextAlign.center,),
+                      Text("Tema :  Keutamaan Bersholawat")
                     ],
                   ),
                 ),
@@ -83,17 +83,17 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan ketiga"),
-                      Text("tanggal 16 Februari 2025"),
-                      Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                      Text("Tema : Etika Bersilaturahmi")
+                      Text("Jumat Pekan ketiga"),
+                      Text("tanggal 21 Februari 2025"),
+                      Text("Ustadz Ahmad Fauzan S.Si Hafidzahullahu ta'ala"),
+                      Text("Tema : Muslim Pinggiran")
                     ],
                   ),
                 ),
               ),
             ),
             SizedBox(
-              height: 120,
+              height: 140,
               width: 400,
               child: Card(
                 color: Color(0xffF9FCF2),
@@ -101,10 +101,10 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      Text("Ahad Pekan keempat"),
+                      Text("Jumat Pekan keempat"),
                       Text("tanggal 23 Februari 2025"),
-                      Text("Ustadz Abu Ukasyah A.Md Hafidzahullahu ta'ala"),
-                      Text("Tema : Kewajiban dalam Islam")
+                      Text("Ustadz Agung Hidayah Sehfuloh, C.LQ Hafizhahullah ta'ala", textAlign: TextAlign.center,),
+                      Text("Tema : Nabi Musa")
                     ],
                   ),
                 ),

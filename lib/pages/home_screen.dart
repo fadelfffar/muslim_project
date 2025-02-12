@@ -369,16 +369,54 @@ class _HomeScreenState extends State<HomeScreen> {
                     ))
                   ),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/syuruq');
+                    Navigator.pushNamed(context, '/maghrib_senin');
                   },
                   child: ListTile(
-                    leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
-                    title: const Text("Kajian Syuruq"),
-                    subtitle: const Text("Setiap Ahad pagi setelah subuh"),
+                    leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
+                    title: const Text("Tahsin Ikwan Ba'da Maghrib Senin"),
+                    subtitle: const Text("Setiap Senin Malam setelah sholat Maghrib"),
                   )
                 ),
               ),
-              SizedBox(height: 12,),
+              const SizedBox(height: 12,),
+              Flexible(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ))
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/maghrib_selasa');
+                  },
+                  child: ListTile(
+                    leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
+                    title: const Text("Tahsin Akwan Ba'da Maghrib Selasa"),
+                    subtitle: const Text("Setiap Selasa Malam setelah sholat Maghrib"),
+                  )
+                ),
+              ),
+              const SizedBox(height: 12,),
+              Flexible(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ))
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/maghrib_kamis');
+                  },
+                  child: ListTile(
+                    leading: Image.asset("assets/icon-dzuhur.png", width: 24, height: 24,),
+                    title: const Text("Kajian Ba'da Maghrib Kamis"),
+                    subtitle: const Text("Setiap Kamis Malam setelah sholat Maghrib"),
+                  )
+                ),
+              ),
+              const SizedBox(height: 12,),
               Flexible(
                 child: ElevatedButton(
                   style: ButtonStyle(
@@ -391,12 +429,51 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, '/maghrib_jumat');
                   },
                   child: ListTile(
-                    leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
+                    leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
                     title: const Text("Kajian Ba'da Maghrib Jumat"),
-                    subtitle: const Text("Setiap Jumat malam setelah Maghrib"),
+                    subtitle: const Text("Setiap Jumat malam setelah sholat Maghrib"),
                   )
                 ),
               ),
+              const SizedBox(height: 12,),
+              Flexible(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ))
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/khutbah-jumat');
+                  },
+                  child: ListTile(
+                    leading: Image.asset("assets/icon-dzuhur.png", width: 24, height: 24,),
+                    title: const Text("Kajian Khutbah Jum'at"),
+                    subtitle: const Text("Setiap saat sholat fardhu a'in Jum'at"),
+                  )
+                ),
+              ),
+              const SizedBox(height: 12,),
+              Flexible(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ))
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/syuruq');
+                  },
+                  child: ListTile(
+                    leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
+                    title: const Text("Kajian Syuruq"),
+                    subtitle: const Text("Setiap Ahad pagi setelah sholat Subuh"),
+                  )
+                ),
+              ),
+              const SizedBox(height: 12,),
             ],
           ),
         ),
