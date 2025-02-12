@@ -396,7 +396,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     subtitle: const Text("Setiap Jumat malam setelah Maghrib"),
                   )
                 ),
-                ),
+              ),
             ],
           ),
         ),
