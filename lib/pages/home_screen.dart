@@ -359,8 +359,12 @@ class _HomeScreenState extends State<HomeScreen> {
         // Ramadan Screen
         Container(
           color: const Color(0xff359D59),
-          child: const Center(
-            child: Text("Coming Soon", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+          child: Center(
+            child: ElevatedButton(onPressed: () {
+              Navigator.pushNamed(context, "/jadwal_terawih");
+              },
+              child: Text("Terawih"))
+            // Text("Coming Soon", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
           ),
         ),
         // Reminder Settings Screen
@@ -426,6 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   );
                                 },
                               style: const ButtonStyle(
+                              backgroundColor: WidgetStatePropertyAll(Color(0xffF9FCF2)),
                               fixedSize: WidgetStatePropertyAll(Size(360, 64)),
                           ),
                               child: const Text("Buat Pengingat 30 menit sebelum waktu sholat (semua 5 waktu)"),

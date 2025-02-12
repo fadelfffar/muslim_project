@@ -3,6 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_project/notification/notification_service.dart';
+import 'package:muslim_project/pages/detais_pages.dart/jadwal_terawih.dart';
 import 'package:muslim_project/pages/detais_pages.dart/kajian_syuruq.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
@@ -108,6 +109,7 @@ class _MyAppState extends State<MyApp> {
         '/khutbah-jumat': (context) => const KhutbahJumatScreen(),
         '/maghrib_jumat': (context) => const KajianMaghribJumatScreen(),
         '/syuruq': (context) => const KajianSyuruqScreen(),
+        '/jadwal_terawih': (context) => const JadwalTerawihScreen(),
       },
     );
   }
