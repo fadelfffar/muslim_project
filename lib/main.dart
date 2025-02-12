@@ -68,8 +68,7 @@ class _MyAppState extends State<MyApp> {
         navigationBarTheme: const NavigationBarThemeData(
           backgroundColor: Color(0xff1A7149),
           indicatorColor: Color(0xffF9FCF2),
-          labelTextStyle: WidgetStatePropertyAll(TextStyle( color:  Color(0xffDAFAD8), fontWeight: FontWeight.w500))
-
+          labelTextStyle: WidgetStatePropertyAll(TextStyle( color:  Color(0xffDAFAD8), fontWeight: FontWeight.w500)),
         ),
         listTileTheme: ListTileThemeData(
           minTileHeight: 20,

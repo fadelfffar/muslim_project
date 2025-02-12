@@ -36,42 +36,75 @@ class _KajianMaghribJumatScreenState extends State<KajianMaghribJumatScreen> {
         alignment: Alignment.center,
         child: const Column(
           children: [
-            Card(
-              color: Color(0xffF9FCF2),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                    Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                    Text("Tema : Etika Bersilaturahmi")
-                  ],
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Jumat Pekan pertama"),
+                      Text("tanggal 7 Februari 2025"),
+                      Text("Ustadz Liman Pujowaluyo S.Thi"),
+                      Text("Tema : Kitab Minjahul Muslimin")
+                    ],
+                  ),
                 ),
               ),
             ),
-            Card(
-              color: Color(0xffF9FCF2),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                    Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                    Text("Tema : Etika Bersilaturahmi")
-                  ],
+            SizedBox(
+              height: 140,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Jumat Pekan kedua"),
+                      Text("tanggal 14 Februari 2025"),
+                      Text("Ustadz Liman Pujowaluyo S.Thi", textAlign: TextAlign.center,),
+                      Text("Tema : Kitab Minjahul Muslimin")
+                    ],
+                  ),
                 ),
               ),
             ),
-            Card(
-              color: Color(0xffF9FCF2),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                    Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                    Text("Tema : Etika Bersilaturahmi")
-                  ],
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Jumat Pekan ketiga"),
+                      Text("tanggal 21 Februari 2025"),
+                      Text("Ustadz Liman Pujowaluyo S.Thi"),
+                      Text("Tema : Kitab Minjahul Muslimin")
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Jumat Pekan keempat"),
+                      Text("tanggal 23 Februari 2025"),
+                      Text("Ustadz Liman Pujowaluyo S.Thi"),
+                      Text("Tema : Kitab Minjahul Muslimin")
+                    ],
+                  ),
                 ),
               ),
             ),

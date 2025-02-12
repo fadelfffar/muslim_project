@@ -36,42 +36,75 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
         alignment: Alignment.center,
         child: const Column(
           children: [
-            Card(
-              color: Color(0xffF9FCF2),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                    Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                    Text("Tema : Etika Bersilaturahmi")
-                  ],
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan pertama"),
+                      Text("tanggal 2 Februari 2025"),
+                      Text("Ustadz Ahmad Fauzan S.Si Hafidzahullahu ta'ala"),
+                      Text("Tema : Riba, Dosa Besar Yang Menghancurkan")
+                    ],
+                  ),
                 ),
               ),
             ),
-            Card(
-              color: Color(0xffF9FCF2),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                    Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                    Text("Tema : Etika Bersilaturahmi")
-                  ],
+            SizedBox(
+              height: 140,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan kedua"),
+                      Text("tanggal 9 Februari 2025"),
+                      Text("Ustadz Agung Hidayah Saefullah, C.LQ Hafidzahullahu ta'ala", textAlign: TextAlign.center,),
+                      Text("Tema : Ruqoyyah Putri Rosulullah")
+                    ],
+                  ),
                 ),
               ),
             ),
-            Card(
-              color: Color(0xffF9FCF2),
-              child: Padding(
-                padding: EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Text("Ahad Pekan ketiga tanggal 16 Februari 2025"),
-                    Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
-                    Text("Tema : Etika Bersilaturahmi")
-                  ],
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan ketiga"),
+                      Text("tanggal 16 Februari 2025"),
+                      Text("Ustadz Agus Priyanto Hafidzahullahu ta'ala"),
+                      Text("Tema : Etika Bersilaturahmi")
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 120,
+              width: 400,
+              child: Card(
+                color: Color(0xffF9FCF2),
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    children: [
+                      Text("Ahad Pekan keempat"),
+                      Text("tanggal 23 Februari 2025"),
+                      Text("Ustadz Abu Ukasyah A.Md Hafidzahullahu ta'ala"),
+                      Text("Tema : Kewajiban dalam Islam")
+                    ],
+                  ),
                 ),
               ),
             ),
