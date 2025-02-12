@@ -44,7 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
             currentPageIndex = index;
           });
         },
-        backgroundColor: const Color(0xff8FC332),
         indicatorColor: const Color(0xffF9FCF2),
         selectedIndex: currentPageIndex,
         // list of icons
@@ -71,12 +70,12 @@ class _HomeScreenState extends State<HomeScreen> {
         /// Home page
         Container(
         padding: const EdgeInsets.all(20),
-        color: const Color(0xffB7E369),
+        color: const Color(0xff359D59),
         constraints: const BoxConstraints.expand(width: 2400, height: 800),
         child: ListView(
           children: [
             Text(
-              "Selamat Datang di Website Lentera Istiqomah",
+              "Selamat Datang di Mobile Lentera Istiqomah",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -228,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
       // Reminder Settings Screen
       Container(
         padding: const EdgeInsets.all(20),
-        color: const Color(0xffB7E369),
+        color: const Color(0xff359D59),
         constraints: const BoxConstraints.expand(width: 2400, height: 800),
         child: Column(
           children: [
@@ -354,33 +353,50 @@ class _HomeScreenState extends State<HomeScreen> {
         // Mosque Event Schedule
         Container(
           padding: const EdgeInsets.all(20),
-          color: const Color(0xffB7E369),
+          color: const Color(0xff359D59),
           constraints: const BoxConstraints.expand(width: 2400, height: 800),
           child:  ListView(
             // children: [
             //   Column(
-              children: [
-                SizedBox(height: 40,),
-                Flexible(
+            children: [
+              const SizedBox(height: 40,),
+              Flexible(
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
+                    shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ))
+                  ),
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/syuruq');
+                  },
+                  child: ListTile(
+                    leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
+                    title: const Text("Kajian Syuruq"),
+                    subtitle: const Text("Setiap Ahad pagi setelah subuh"),
+                  )
+                ),
+              ),
+              SizedBox(height: 12,),
+              Flexible(
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Color(0xffF9FCF2)),
+                      backgroundColor: WidgetStatePropertyAll(const Color(0xffF9FCF2)),
                       shape: WidgetStatePropertyAll(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.0),
                       ))
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/details');
+                      Navigator.pushNamed(context, '/maghrib_jumat');
                     },
                     child: ListTile(
                       leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
-                      title: Text("Kajian Syuruq"),
-                      subtitle: Text("Setiap Ahad pagi setelah subuh"),
+                      title: const Text("Kajian Ba'da Maghrib Jumat"),
+                      subtitle: const Text("Setiap Jumat malam setelah Maghrib"),
                     )
                   ),
                 ),
-                // ],
-              // ),
             ],
           ),
         ),

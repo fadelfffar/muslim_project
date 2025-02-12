@@ -3,9 +3,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:muslim_project/notification/notification_service.dart';
-import 'package:muslim_project/pages/details_screen.dart';
+import 'package:muslim_project/pages/detais_pages.dart/kajian_syuruq.dart';
 import 'package:muslim_project/pages/home_screen.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
+
+import 'pages/detais_pages.dart/kajian_maghrib_jumat.dart';
 
 // mixin snapshot {
 //   late Future<Prayer> futurePrayer;
@@ -63,6 +65,12 @@ class _MyAppState extends State<MyApp> {
             borderRadius: BorderRadius.circular(12.0),
           ),
         ),
+        navigationBarTheme: const NavigationBarThemeData(
+          backgroundColor: Color(0xff1A7149),
+          indicatorColor: Color(0xffF9FCF2),
+          labelTextStyle: WidgetStatePropertyAll(TextStyle( color:  Color(0xffDAFAD8), fontWeight: FontWeight.w500))
+
+        ),
         listTileTheme: ListTileThemeData(
           minTileHeight: 20,
           shape: RoundedRectangleBorder(
@@ -89,8 +97,9 @@ class _MyAppState extends State<MyApp> {
       ),
       initialRoute: '/home',
       routes: {
-        '/home': (context) => HomeScreen(),
-        '/details': (context) => DetailsScreen()
+        '/home': (context) => const HomeScreen(),
+        '/syuruq': (context) => const KajianSyuruqScreen(),
+        '/maghrib_jumat': (context) => const KajianMaghribJumatScreen()
       },
     );
   }
