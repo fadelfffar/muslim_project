@@ -24,10 +24,8 @@ class _JadwalTerawihScreenState extends State<JadwalTerawihScreen> {
           ),
         ),
       ),
-      body: Container(
-        child: PhotoView(
-          imageProvider: const AssetImage("assets/jadwal_terawih.png")),
-      ),
+      body: PhotoView(
+        imageProvider: const AssetImage("assets/jadwal_terawih.png")),
     );
   }
 }

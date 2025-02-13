@@ -51,19 +51,22 @@ class _HomeScreenState extends State<HomeScreen> {
         destinations: const <Widget>[
           NavigationDestination(
             selectedIcon: Icon(Icons.home, color: Colors.black,),
-            icon: Icon(Icons.home_outlined),
+            icon: Icon(Icons.home_outlined, color: Colors.black,),
             label: 'Beranda',
           ),
           NavigationDestination(
+            selectedIcon: Icon(Icons.date_range, color: Colors.black,),
             icon: Icon(Icons.date_range_outlined, color: Colors.black,),
             label: 'Acara Masjid',
           ),
           NavigationDestination(
+            selectedIcon: Icon(Icons.mosque, color: Colors.black,),
             icon: Icon(Icons.mosque_outlined, color: Colors.black,),
             label: 'Ramadan',
           ),
           NavigationDestination(
-            icon: Icon(Icons.settings, color: Colors.black,),
+            selectedIcon: Icon(Icons.settings, color: Colors.black,),
+            icon: Icon(Icons.settings_outlined, color: Colors.black,),
             label: 'Pengaturan',
           ),
         ],
@@ -251,8 +254,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: ListTile(
                     leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
-                    title: const Text("Tahsin Ikwan Ba'da Maghrib Senin"),
-                    subtitle: const Text("Setiap Senin Malam setelah sholat Maghrib"),
+                    title: const Text("Setiap Senin Malam setelah sholat Maghrib"),
+                    subtitle: const Text("Tahsin Ikhwan"),
                   )
                 ),
               ),
@@ -270,8 +273,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: ListTile(
                     leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
-                    title: const Text("Tahsin Akwan Ba'da Maghrib Selasa"),
-                    subtitle: const Text("Setiap Selasa Malam setelah sholat Maghrib"),
+                    title: const Text("Setiap Selasa Malam setelah sholat Maghrib"),
+                    subtitle: const Text("Tahsin Akhwat"),
                   )
                 ),
               ),
@@ -288,9 +291,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, '/maghrib_kamis');
                   },
                   child: ListTile(
-                    leading: Image.asset("assets/icon-dzuhur.png", width: 24, height: 24,),
-                    title: const Text("Kajian Ba'da Maghrib Kamis"),
-                    subtitle: const Text("Setiap Kamis Malam setelah sholat Maghrib"),
+                    leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
+                    title: const Text("Setiap Kamis Malam setelah sholat Maghrib"),
+                    subtitle: const Text("Kajian Ba'da Maghrib Kamis"),
                   )
                 ),
               ),
@@ -308,8 +311,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: ListTile(
                     leading: Image.asset("assets/icon-maghrib.png", width: 24, height: 24,),
-                    title: const Text("Kajian Ba'da Maghrib Jumat"),
-                    subtitle: const Text("Setiap Jumat malam setelah sholat Maghrib"),
+                    title: const Text("Setiap Jumat malam setelah sholat Maghrib"),
+                    subtitle: const Text("Kajian Ba'da Maghrib Jumat"),
                   )
                 ),
               ),
@@ -327,8 +330,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: ListTile(
                     leading: Image.asset("assets/icon-dzuhur.png", width: 24, height: 24,),
-                    title: const Text("Kajian Khutbah Jum'at"),
-                    subtitle: const Text("Setiap saat sholat fardhu a'in Jum'at"),
+                    title: const Text("Setiap Jum'at"),
+                    subtitle: const Text("Khutbah Jum'at"),
                   )
                 ),
               ),
@@ -346,8 +349,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: ListTile(
                     leading: Image.asset("assets/icon-subuh.png", width: 24, height: 24,),
-                    title: const Text("Kajian Syuruq"),
-                    subtitle: const Text("Setiap Ahad pagi setelah sholat Subuh"),
+                    title: const Text("Setiap Ahad pagi setelah sholat Subuh"),
+                    subtitle: const Text("Kajian Syuruq"),
                   )
                 ),
               ),
