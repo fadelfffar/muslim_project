@@ -358,16 +358,33 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-
         // Ramadan Screen
         Container(
+          padding: EdgeInsets.all(16),
           color: const Color(0xff359D59),
-          child: Center(
-            child: ElevatedButton(onPressed: () {
-              Navigator.pushNamed(context, "/jadwal_terawih");
-              },
-              child: Text("Terawih"))
-            // Text("Coming Soon", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+          child: ListView(
+            children: [
+              SizedBox(
+                height: 40,
+              ),
+              Flexible(
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                        backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
+                        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.0),
+                        ))
+                    ),
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/jadwal_terawih');
+                    },
+                    child: ListTile(
+                      leading: Image.asset("assets/icon-isya.png", width: 24, height: 24,),
+                      title: const Text("Jadwal Imam Tarawih dan Kultum"),
+                    )
+                ),
+              ),
+            ],
           ),
         ),
         // Reminder Settings Screen
@@ -432,83 +449,42 @@ class _HomeScreenState extends State<HomeScreen> {
                                   scheduledTime: "${justdate} ${snapshot.data!.isya}"
                                   );
                                 },
-                              style: const ButtonStyle(
+                              style:  ButtonStyle(
                               backgroundColor: WidgetStatePropertyAll(Color(0xffF9FCF2)),
                               fixedSize: WidgetStatePropertyAll(Size(360, 64)),
+                              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ))
                           ),
-                              child: const Text("Buat Pengingat 30 menit sebelum waktu sholat (semua 5 waktu)"),
+                              child: const Text("Buat Pengingat 30 menit sebelum waktu sholat (semua 5 waktu)",
+                              style: TextStyle(
+                              color:  Color(0xff474E52),
+                              fontWeight: FontWeight.w600
+                                ),
+                              ),
                               // Text("Buat Pengingat 30 menit sebelum waktu sholat Subuh")
                             ),
                           ),
                         ),
                         const SizedBox(height: 20,),
-                        // Container(
-                        //   decoration: ShapeDecoration(
-                        //     shape: RoundedRectangleBorder(
-                        //       borderRadius: BorderRadius.zero,
-                        //     )
-                        //   ),
-                        //   child:
                         ElevatedButton(
                             onPressed: () {
                               NotificationService().cancelAllNotifications();
                             },
-                            style: const ButtonStyle(
-                              backgroundColor: WidgetStatePropertyAll(Color(0xffF9FCF2)),
-                              fixedSize: WidgetStatePropertyAll(Size(360, 64)),
+                            style: ButtonStyle(
+                              backgroundColor: const WidgetStatePropertyAll(Color(0xffF9FCF2)),
+                              fixedSize: const WidgetStatePropertyAll(Size(360, 64)),
+                              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                            ))
                           ),
-                            child: const Text("Batalkan semua pengingat"),
-                        ),
-                        // )
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     NotificationService().showNotification(
-                        //       id: Random().nextInt(1000),
-                        //       title: "Dzuhur akan tiba dalam sekitar 30 menit",
-                        //       body: "Waktu sholat Dzuhur tiba pada ${snapshot.data!.dzuhur}",
-                        //       // scheduledTime is the same as the current prayer scheduled time
-                        //       // scheduledTime: "${justdate} ${snapshot.data!.dzuhur}"
-                        //       );
-                        //     },
-                        //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Dzuhur")
-                        // ),
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     NotificationService().showNotification(
-                        //       id: Random().nextInt(1000),
-                        //       title: "Ashar akan tiba dalam sekitar 30 menit",
-                        //       body: "Waktu sholat Ashar tiba pada Ashar ${snapshot.data!.ashar}",
-                        //       // scheduledTime is the same as the current prayer scheduled time
-                        //       // scheduledTime: "${justdate} ${snapshot.data!.ashar}"
-                        //       );
-                        //     },
-                        //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Ashar")
-                        // ),
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     NotificationService().showNotification(
-                        //       id: Random().nextInt(1000),
-                        //       title: "Maghrib akan tiba dalam sekitar 30 menit",
-                        //       body: "Waktu sholat Maghrib tiba pada ${snapshot.data!.maghrib}",
-                        //       // scheduledTime is the same as the current prayer scheduled time
-                        //       // scheduledTime: "${justdate} ${snapshot.data!.maghrib}"
-                        //       );
-                        //     },
-                        //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Maghrib")
-                        // ),
-                        // ElevatedButton(
-                        //   onPressed: () {
-                        //     NotificationService().showNotification(
-                        //       id: Random().nextInt(1000),
-                        //       title: "Isya akan tiba dalam sekitar 30 menit",
-                        //       body: "Waktu sholat Isya tiba pada ${snapshot.data!.isya}",
-                        //       // scheduledTime is the same as the current prayer scheduled time
-                        //       // scheduledTime: "${justdate} ${snapshot.data!.isya}"
-                        //       );
-                        //     },
-                        //   child: Text("Buat Pengingat 30 menit sebelum waktu sholat Isya")
-                        // ),
-                      
+                            child: const Text("Batalkan semua pengingat",
+                            style: TextStyle(
+                              color:  Color(0xff474E52),
+                              fontWeight: FontWeight.w600
+                                ),
+                              ),
+                            ),
                           ],
                         );
                       } else if (snapshot.hasError) {

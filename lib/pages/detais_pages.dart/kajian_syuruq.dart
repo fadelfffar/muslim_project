@@ -39,7 +39,7 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
         child: const Column(
           children: [
             SizedBox(
-              height: 120,
+              height: 160,
               width: 400,
               child: Card(
                 color: Color(0xffF9FCF2),
@@ -93,7 +93,7 @@ class _KajianSyuruqScreenState extends State<KajianSyuruqScreen> {
               ),
             ),
             SizedBox(
-              height: 120,
+              height: 160,
               width: 400,
               child: Card(
                 color: Color(0xffF9FCF2),
