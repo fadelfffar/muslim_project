@@ -11,7 +11,7 @@ dependencies:
   android_alarm_manager_plus: ^4.0.5
   flutter:
     sdk: flutter
-  flutter_local_notifications: ^19.0.0-dev.4
+  flutter_local_notifications: ^19.0.0
   flutter_timezone: ^4.0.0
   http: ^1.2.2
   permission_handler: ^11.3.1
