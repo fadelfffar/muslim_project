@@ -20,7 +20,30 @@ A Flutter application for Muslims, providing prayer times, event schedules, and 
 
 ## Screenshots
 
-*(Add screenshots of the application here to showcase its interface and features.)*
+## Home Screen
+
+![Home Screen](assets/app_screenshot/lentera_home_screen.png)
+
+## Notification Example
+
+![Notification Example](assets/app_screenshot/lentera_notification_example.png)
+
+## Mosque Schedule Screen
+
+![Mosque Schedule Screen](assets/app_screenshot/lentera_mosque_schedule_screen.png)
+
+## Study Theme
+
+![Study Theme](assets/app_screenshot/lentera_study_theme_screen.png)
+
+## Tarawih Screen
+
+![Tarawih Screen](assets/app_screenshot/lentera_tarawih_screen.png)
+
+## Settings Screen
+
+![Settings Screen](assets/app_screenshot/lentera_settings_screen.png)
+
 
 ## Getting Started
 
