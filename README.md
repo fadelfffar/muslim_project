@@ -1,32 +1,53 @@
-# lentera_istiqomah
+# Lentera Istiqomah
 
-Welcome to Lentera Istiqomah, an Application intended for Ummah of Masjid Al-Istiqomah! 
-We provide daily prayer time reminder with the sound of azan,
-Weekly Masjid event, from Islam Study, Dawn Discussions with breakfast after, to Quran Reading Practice,
-Oh and we have Tarawih's Imam Schedule.
+A Flutter application for Muslims, providing prayer times, event schedules, and notifications. This app serves as a digital platform for Masjid Al Istiqomah Purbalingga.
 
-This is some screen from the app
+## Features
 
-## Home Screen
+*   **Daily Prayer Times:** View accurate daily prayer schedules (Imsak, Subuh, Syuruq, Dzuhur, Ashar, Maghrib, Isya).
+*   **Mosque Event Schedules:** Stay updated with various mosque activities and studies, including:
+    *   Tahsin Ikhwan & Akhwat
+    *   Kajian Ba'da Maghrib (Kamis & Jumat)
+    *   Khutbah Jum'at details
+    *   Kajian Syuruq
+    *   Jadwal Imam Tarawih and Kultum during Ramadan.
+*   **Prayer Reminders:** Set notifications for upcoming prayer times.
 
-![Home Screen](assets/app_screenshot/lentera_home_screen.png)
+## Technologies Used
 
-## Notification Example
+*   **Flutter:** For building the cross-platform mobile application.
+*   **Dart:** The programming language used with Flutter.
 
-![Notification Example](assets/app_screenshot/lentera_notification_example.png)
+## Screenshots
 
-## Mosque Schedule Screen
+*(Add screenshots of the application here to showcase its interface and features.)*
 
-![Mosque Schedule Screen](assets/app_screenshot/lentera_mosque_schedule_screen.png)
+## Getting Started
 
-## Study Theme
+### Prerequisites
 
-![Study Theme](assets/app_screenshot/lentera_study_theme_screen.png)
+*   Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+*   Dart SDK: (Comes with Flutter)
 
-## Tarawih Screen
+### Installation
 
-![Tarawih Screen](assets/app_screenshot/lentera_tarawih_screen.png)
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/fadelfffar/muslim_project.git
+    cd muslim_project
+    ```
+2.  **Install dependencies:**
+    ```bash
+    flutter pub get
+    ```
+3.  **Run the application:**
+    ```bash
+    flutter run
+    ```
 
-## Settings Screen
+## Future Ideas
 
-![Settings Screen](assets/app_screenshot/lentera_settings_screen.png)
+*   Qibla Compass
+*   Quran Reader
+*   Location-based Adhan Notifications
+*   Integration with more community features.
